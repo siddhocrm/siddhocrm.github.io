@@ -1707,10 +1707,23 @@ body {
 
   .hero-card-stack {
     width: 280px;
+    height: 320px;
   }
 
   .hero-card {
     width: 260px;
+  }
+
+  .card-top {
+    top: 0;
+  }
+
+  .card-mid {
+    top: 115px;
+  }
+
+  .card-bot {
+    top: 230px;
   }
 
   .why-grid {
@@ -1766,11 +1779,24 @@ body {
 
   .hero-card-stack {
     width: 240px;
+    height: 350px;
     margin: 0 auto;
   }
 
   .hero-card {
     width: 220px;
     font-size: .88rem;
+  }
+
+  .card-top {
+    top: 0;
+  }
+
+  .card-mid {
+    top: 130px;
+  }
+
+  .card-bot {
+    top: 260px;
   }
 }
