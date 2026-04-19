@@ -132,7 +132,7 @@ function handleDemoSubmit(e) {
     const msg = encodeURIComponent(
       `Hello Siddho CRM! 👋\n\nI'd like a FREE DEMO.\n\nName: ${name}\nPhone: ${phone}\nBusiness: ${biz}\nSoftware needed: ${need || 'Not specified'}`
     );
-    window.open(`https://wa.me/91XXXXXXXXXX?text=${msg}`, '_blank');
+    window.open(`https://wa.me/918900415759?text=${msg}`, '_blank');
   }, 1200);
 }
 
