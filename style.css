@@ -297,14 +297,13 @@ body {
 .logo-icon {
   width: 36px;
   height: 36px;
-  background: var(--grad-1);
   border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 1.1rem;
-  font-weight: 700;
+  object-fit: cover;
+  transition: transform var(--trans);
+}
+
+.logo:hover .logo-icon {
+  transform: scale(1.15) rotate(6deg);
 }
 
 .logo-text {
@@ -545,6 +544,7 @@ body {
   position: relative;
   width: 320px;
   height: 260px;
+  perspective: 1000px;
 }
 
 .hero-card {
@@ -558,43 +558,42 @@ body {
   gap: 14px;
   box-shadow: var(--shadow-md);
   width: 290px;
-  transition: all var(--trans);
-  animation: cardFloat 3s ease-in-out infinite alternate;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), z-index 0.4s;
 }
 
-.hero-card:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: var(--shadow-lg);
-}
-
+/* Staggered vertical floating animations */
 .card-top {
   top: 0;
   right: 0;
   z-index: 3;
-  animation-delay: 0s;
+  animation: floatUpDown 4s ease-in-out infinite alternate;
 }
 
 .card-mid {
   top: 90px;
   left: 0;
   z-index: 2;
-  animation-delay: -.8s;
+  animation: floatUpDown 4s ease-in-out infinite alternate;
+  animation-delay: -1.3s;
 }
 
 .card-bot {
   top: 180px;
   right: 10px;
   z-index: 1;
-  animation-delay: -1.6s;
+  animation: floatUpDown 4s ease-in-out infinite alternate;
+  animation-delay: -2.6s;
 }
 
-@keyframes cardFloat {
+
+
+@keyframes floatUpDown {
   0% {
-    transform: translateY(0)
+    transform: translateY(0);
   }
 
   100% {
-    transform: translateY(-8px)
+    transform: translateY(-12px);
   }
 }
 
@@ -1590,64 +1589,6 @@ body {
    RESPONSIVE
    ============================================= */
 @media (max-width: 1024px) {
-  .why-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .testimonials-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .plans-grid {
-    grid-template-columns: 1fr;
-    max-width: 420px;
-    margin: 0 auto;
-  }
-
-  .plan-featured {
-    transform: none;
-  }
-
-  .plan-featured:hover {
-    transform: translateY(-6px);
-  }
-}
-
-@media (max-width: 900px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about-cards {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .service-block {
-    grid-template-columns: 1fr;
-  }
-
-  .service-block .service-img-wrap,
-  .service-block.reverse .service-img-wrap {
-    order: -1 !important;
-  }
-
-  .service-block .service-info,
-  .service-block.reverse .service-info {
-    order: 1 !important;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .demo-inner {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 40px 30px;
-  }
-}
-
-@media (max-width: 720px) {
   .nav-links {
     display: none;
     position: fixed;
@@ -1680,6 +1621,70 @@ body {
   .nav-cta {
     display: none;
   }
+
+  .nav-actions {
+    margin-left: auto;
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .plans-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .plan-featured {
+    transform: none;
+  }
+
+  .plan-featured:hover {
+    transform: translateY(-6px);
+  }
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .service-block,
+  .service-block.reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .service-block .service-img-wrap,
+  .service-block.reverse .service-img-wrap {
+    order: -1 !important;
+  }
+
+  .service-block .service-info,
+  .service-block.reverse .service-info {
+    order: 1 !important;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .demo-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 40px 30px;
+  }
+}
+
+@media (max-width: 720px) {
 
   .hero {
     flex-direction: column;
@@ -1755,7 +1760,8 @@ body {
     padding: 60px 0;
   }
 
-  .service-block {
+  .service-block,
+  .service-block.reverse {
     gap: 30px;
   }
 
