@@ -187,3 +187,140 @@ const sectionObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.4 });
 
 sections.forEach(s => sectionObserver.observe(s));
+
+// ── Custom Cursor ──
+(function () {
+  const dot  = document.getElementById('cursor-dot');
+  const ring = document.getElementById('cursor-ring');
+
+  // Skip on touch-only devices
+  if (!dot || !ring || window.matchMedia('(hover: none)').matches) return;
+
+  let mouseX = -100, mouseY = -100;
+  let ringX  = -100, ringY  = -100;
+  let rafId;
+
+  // Move dot instantly, ring follows with lerp
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    dot.style.left = mouseX + 'px';
+    dot.style.top  = mouseY + 'px';
+  });
+
+  // Smooth-follow ring via rAF lerp
+  function animateRing() {
+    ringX += (mouseX - ringX) * 0.14;
+    ringY += (mouseY - ringY) * 0.14;
+    ring.style.left = ringX + 'px';
+    ring.style.top  = ringY + 'px';
+    rafId = requestAnimationFrame(animateRing);
+  }
+  animateRing();
+
+  // Hover state on interactive elements
+  const hoverTargets = 'a, button, input, select, textarea, label, [role="button"]';
+  document.querySelectorAll(hoverTargets).forEach(el => {
+    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+  });
+
+  // Click state
+  document.addEventListener('mousedown', () => document.body.classList.add('cursor-click'));
+  document.addEventListener('mouseup',   () => document.body.classList.remove('cursor-click'));
+
+  // Hide cursors when mouse leaves window
+  document.addEventListener('mouseleave', () => {
+    dot.style.opacity  = '0';
+    ring.style.opacity = '0';
+  });
+  document.addEventListener('mouseenter', () => {
+    dot.style.opacity  = '1';
+    ring.style.opacity = '1';
+  });
+})();
+
+// ── Background Music Player ──
+(function () {
+  const audio = document.getElementById('bg-music');
+  const btn   = document.getElementById('music-btn');
+
+  if (!audio || !btn) return;
+
+  let isPlaying = false;
+  let autoStarted = false;
+
+  // Fade volume in smoothly
+  function fadeIn(audioEl, duration) {
+    audioEl.volume = 0;
+    const steps    = 30;
+    const stepTime = duration / steps;
+    const stepVol  = 0.35 / steps;
+    let step = 0;
+    const timer = setInterval(() => {
+      step++;
+      audioEl.volume = Math.min(stepVol * step, 0.35);
+      if (step >= steps) clearInterval(timer);
+    }, stepTime);
+  }
+
+  function fadeOut(audioEl, duration, onComplete) {
+    const steps    = 20;
+    const stepTime = duration / steps;
+    const startVol = audioEl.volume;
+    let step = 0;
+    const timer = setInterval(() => {
+      step++;
+      audioEl.volume = Math.max(startVol - (startVol / steps) * step, 0);
+      if (step >= steps) {
+        clearInterval(timer);
+        audioEl.pause();
+        if (onComplete) onComplete();
+      }
+    }, stepTime);
+  }
+
+  function setPlaying(state) {
+    isPlaying = state;
+    btn.classList.toggle('playing', state);
+    btn.setAttribute('aria-label', state ? 'Pause background music' : 'Play background music');
+  }
+
+  function startMusic() {
+    if (isPlaying) return;
+    audio.play()
+      .then(() => {
+        fadeIn(audio, 1500);
+        setPlaying(true);
+      })
+      .catch(() => { /* blocked */ });
+  }
+
+  // ── Try autoplay immediately ──
+  startMusic();
+
+  // ── Fallback: start on first user interaction if autoplay was blocked ──
+  function onFirstInteraction() {
+    if (autoStarted || isPlaying) return;
+    autoStarted = true;
+    startMusic();
+    // Remove listeners once triggered
+    ['click', 'scroll', 'keydown', 'touchstart'].forEach(evt =>
+      document.removeEventListener(evt, onFirstInteraction, { once: true })
+    );
+  }
+
+  ['click', 'scroll', 'keydown', 'touchstart'].forEach(evt =>
+    document.addEventListener(evt, onFirstInteraction, { once: true, passive: true })
+  );
+
+  // ── Manual toggle button ──
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation(); // don't double-trigger the interaction listener
+    if (isPlaying) {
+      fadeOut(audio, 800, () => setPlaying(false));
+    } else {
+      startMusic();
+    }
+  });
+})();

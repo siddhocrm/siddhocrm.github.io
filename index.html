@@ -47,6 +47,10 @@
 
 <body>
 
+  <!-- ===== CUSTOM CURSOR ===== -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
   <!-- ===== NAVBAR ===== -->
   <header class="navbar" id="navbar">
     <div class="nav-container">
@@ -80,7 +84,7 @@
     <div class="hero-bg-blob blob1"></div>
     <div class="hero-bg-blob blob2"></div>
     <div class="hero-content">
-      <div class="hero-badge">🚀 Trusted by 554+ Local Businesses</div>
+      <div class="hero-badge">🚀 Trusted by 84+ Local Businesses</div>
       <h1 class="hero-title">Smart Software. <span class="gradient-text">Simple Pricing.</span><br />Built for <span
           class="gradient-text">Your Business.</span></h1>
       <p class="hero-subtitle">Siddho CRM crafts affordable, customised software solutions for local shops, restaurants,
@@ -100,8 +104,10 @@
         </div>
       </div>
       <div class="hero-cta-group">
-        <a href="https://siddhocrm.online/trialdemo/" class="btn btn-primary btn-lg" id="hero-demo-btn">🎯 Book Free Demo</a>
-        <a href="https://siddhocrm.online/billingdemo/" class="btn btn-outline btn-lg" id="hero-services-btn">Live Demo Billing App</a>
+        <a href="https://siddhocrm.online/trialdemo/" class="btn btn-primary btn-lg" id="hero-demo-btn">🎯 Book Free
+          Demo</a>
+        <a href="https://siddhocrm.online/billingdemo/" class="btn btn-outline btn-lg" id="hero-services-btn">Live Demo
+          Billing App</a>
       </div>
     </div>
     <div class="hero-visual">
@@ -282,7 +288,8 @@
               <li>✅ Daily & monthly reports</li>
               <li>✅ Print & WhatsApp share</li>
             </ul>
-            <a href="http://siddhocrm.online/billingdemo/" class="btn btn-outline btn-sm" id="billing-demo-btn">Try Free Demo</a>
+            <a href="http://siddhocrm.online/billingdemo/" class="btn btn-outline btn-sm" id="billing-demo-btn">Try Free
+              Demo</a>
           </div>
         </div>
 
@@ -305,7 +312,8 @@
               <li>✅ Advance & deduction management</li>
               <li>✅ Monthly payroll reports</li>
             </ul>
-            <a href="http://siddhocrm.online/trialdemo/" class="btn btn-outline btn-sm" id="payroll-demo-btn">Try Free Demo</a>
+            <a href="http://siddhocrm.online/trialdemo/" class="btn btn-outline btn-sm" id="payroll-demo-btn">Try Free
+              Demo</a>
           </div>
         </div>
 
@@ -328,7 +336,8 @@
               <li>✅ Barcode support</li>
               <li>✅ Purchase & sale history</li>
             </ul>
-            <a href="http://siddhocrm.online/trialdemo/" class="btn btn-outline btn-sm" id="stock-demo-btn">Try Free Demo</a>
+            <a href="http://siddhocrm.online/trialdemo/" class="btn btn-outline btn-sm" id="stock-demo-btn">Try Free
+              Demo</a>
           </div>
         </div>
 
@@ -506,7 +515,8 @@
             What exactly do I get for ₹499 onboarding? <span class="faq-arrow">▼</span>
           </button>
           <div class="faq-answer">
-            <p>No Onboarding Fees till July. The ₹499 onboarding fee covers the full setup of your customised software — including data entry,
+            <p>No Onboarding Fees till July. The ₹499 onboarding fee covers the full setup of your customised software —
+              including data entry,
               configuration for your specific business, training session, and getting everything ready to use. This is a
               one-time payment only.</p>
           </div>
@@ -762,6 +772,21 @@
   <!-- Back to top -->
   <button class="back-to-top" id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"
     title="Back to top">↑</button>
+
+  <!-- ===== BACKGROUND MUSIC ===== -->
+  <audio id="bg-music" loop preload="none">
+    <source src="bgm.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Floating Music Toggle Button -->
+  <div class="music-player" id="music-player" title="Toggle background music">
+    <button class="music-btn" id="music-btn" aria-label="Play background music">
+      <span class="music-icon" id="music-icon">🎵</span>
+      <span class="music-bars" id="music-bars" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </span>
+    </button>
+  </div>
 
   <script src="script.js"></script>
 </body>
