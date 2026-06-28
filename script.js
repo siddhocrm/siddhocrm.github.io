@@ -130,7 +130,7 @@ function handleDemoSubmit(e) {
 
     // Build WhatsApp message and open in new tab
     const msg = encodeURIComponent(
-      `Hello Siddho CRM! 👋\n\nI'd like a FREE DEMO.\n\nName: ${name}\nPhone: ${phone}\nBusiness: ${biz}\nSoftware needed: ${need || 'Not specified'}`
+      `Hello Siddho CRM! 👋\n\nI'd like a FREE CONSULTATION.\n\nName: ${name}\nPhone: ${phone}\nBusiness: ${biz}\nService needed: ${need || 'Not specified'}`
     );
     window.open('https://api.whatsapp.com/send/?phone=%2B918900415759&text&type=phone_number&app_absent=0');
   }, 1200);
@@ -240,87 +240,4 @@ sections.forEach(s => sectionObserver.observe(s));
   });
 })();
 
-// ── Background Music Player ──
-(function () {
-  const audio = document.getElementById('bg-music');
-  const btn   = document.getElementById('music-btn');
-
-  if (!audio || !btn) return;
-
-  let isPlaying = false;
-  let autoStarted = false;
-
-  // Fade volume in smoothly
-  function fadeIn(audioEl, duration) {
-    audioEl.volume = 0;
-    const steps    = 30;
-    const stepTime = duration / steps;
-    const stepVol  = 0.35 / steps;
-    let step = 0;
-    const timer = setInterval(() => {
-      step++;
-      audioEl.volume = Math.min(stepVol * step, 0.35);
-      if (step >= steps) clearInterval(timer);
-    }, stepTime);
-  }
-
-  function fadeOut(audioEl, duration, onComplete) {
-    const steps    = 20;
-    const stepTime = duration / steps;
-    const startVol = audioEl.volume;
-    let step = 0;
-    const timer = setInterval(() => {
-      step++;
-      audioEl.volume = Math.max(startVol - (startVol / steps) * step, 0);
-      if (step >= steps) {
-        clearInterval(timer);
-        audioEl.pause();
-        if (onComplete) onComplete();
-      }
-    }, stepTime);
-  }
-
-  function setPlaying(state) {
-    isPlaying = state;
-    btn.classList.toggle('playing', state);
-    btn.setAttribute('aria-label', state ? 'Pause background music' : 'Play background music');
-  }
-
-  function startMusic() {
-    if (isPlaying) return;
-    audio.play()
-      .then(() => {
-        fadeIn(audio, 1500);
-        setPlaying(true);
-      })
-      .catch(() => { /* blocked */ });
-  }
-
-  // ── Try autoplay immediately ──
-  startMusic();
-
-  // ── Fallback: start on first user interaction if autoplay was blocked ──
-  function onFirstInteraction() {
-    if (autoStarted || isPlaying) return;
-    autoStarted = true;
-    startMusic();
-    // Remove listeners once triggered
-    ['click', 'scroll', 'keydown', 'touchstart'].forEach(evt =>
-      document.removeEventListener(evt, onFirstInteraction, { once: true })
-    );
-  }
-
-  ['click', 'scroll', 'keydown', 'touchstart'].forEach(evt =>
-    document.addEventListener(evt, onFirstInteraction, { once: true, passive: true })
-  );
-
-  // ── Manual toggle button ──
-  btn.addEventListener('click', (e) => {
-    e.stopPropagation(); // don't double-trigger the interaction listener
-    if (isPlaying) {
-      fadeOut(audio, 800, () => setPlaying(false));
-    } else {
-      startMusic();
-    }
-  });
-})();
+// Floating WhatsApp button is handled directly in the HTML.
