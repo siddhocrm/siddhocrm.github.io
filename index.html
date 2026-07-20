@@ -1,650 +1,538 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Primary Meta Tags -->
-  <title>Siddho CRM – Accounting, Tax & Compliance Support</title>
-  <meta name="title" content="Siddho CRM – Accounting, Tax & Compliance Support" />
-  <meta name="description"
-    content="Siddho CRM offers professional accounting, bookkeeping, tax consultancy, GST & TDS filing, billing software, and manpower support for growing businesses." />
-  <meta name="keywords"
-    content="accounting services, bookkeeping, tax consultancy, GST returns, TDS returns, billing software, manpower services, Siddho CRM" />
-  <meta name="author" content="Siddho CRM" />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="apple-touch-icon" href="favicon.png" />
-  <meta name="theme-color" content="#5b6ff5" />
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://siddhocrm.in/" />
-  <meta property="og:title" content="Siddho CRM – Accounting, Tax & Compliance Support" />
-  <meta property="og:description"
-    content="Siddho CRM offers professional accounting, bookkeeping, tax consultancy, GST & TDS filing, billing software, and manpower support for growing businesses." />
-  <meta property="og:image" content="https://siddhocrm.in/favicon.png" />
-  <meta property="og:site_name" content="Siddho CRM" />
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://siddhocrm.in/" />
-  <meta property="twitter:title" content="Siddho CRM – Accounting, Tax & Compliance Support" />
-  <meta property="twitter:description"
-    content="Siddho CRM offers professional accounting, bookkeeping, tax consultancy, GST & TDS filing, billing software, and manpower support for growing businesses." />
-  <meta property="twitter:image" content="https://siddhocrm.in/favicon.png" />
-
-  <!-- Fonts & Styles -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Siddho CRM - Human + AI Software Suite for MSMEs | ₹299 Onboarding & ₹15/mo</title>
+  <meta name="description" content="Siddho CRM provides custom billing, marketing, HR, order taking, e-commerce, web/app development, and accounting & taxation services for local MSMEs in Hooghly. Human+AI power at just ₹299 onboarding and ₹15/month.">
+  <meta name="keywords" content="Siddho CRM, Hooghly software company, MSME software, billing software, HR software, marketing automation, e-commerce app, accounting taxation Hooghly">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="icon" type="image/jpeg" href="favicon.jpg">
+  <link rel="stylesheet" href="styles.css">
 </head>
+<body class="dark-theme">
 
-<body>
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container announcement-content">
+      <span><i class="fa-solid fa-sparkles"></i> Special Offer for Hooghly & WB Businesses: Complete Software Suite @ <strong>₹299 Onboarding & ₹15/mo</strong>!</span>
+      <a href="#contact" class="announcement-link">Get Free Consultancy <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
 
-  <!-- ===== CUSTOM CURSOR ===== -->
-  <div class="cursor-dot" id="cursor-dot"></div>
-  <div class="cursor-ring" id="cursor-ring"></div>
-
-  <!-- ===== NAVBAR ===== -->
+  <!-- Header Navigation -->
   <header class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#" class="logo" id="logo-link">
-        <img src="favicon.png" alt="Siddho CRM Logo" class="logo-icon" />
-        <span class="logo-text">Siddho<span class="accent">CRM</span></span>
+    <div class="container nav-container">
+      <a href="#" class="brand-logo">
+        <img src="logo.jpg" alt="Siddho CRM Logo" class="header-logo-img">
+        <div class="logo-text">Siddho<span>CRM</span></div>
       </a>
-      <nav class="nav-links" id="nav-links">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#why-us" class="nav-link">Why Us</a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#hero" class="nav-link active">Home</a>
         <a href="#services" class="nav-link">Services</a>
-        <a href="#plans" class="nav-link">Plans</a>
+        <a href="#accounting" class="nav-link highlight-link">Accounting @ ₹799</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="#about" class="nav-link">About Us</a>
         <a href="#faq" class="nav-link">FAQ</a>
-        <a href="#testimonials" class="nav-link">Clients</a>
         <a href="#contact" class="nav-link">Contact</a>
       </nav>
+
       <div class="nav-actions">
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle light/dark mode">
-          <span class="theme-icon" id="theme-icon">🌙</span>
-        </button>
-        <a href="#demo" class="btn btn-primary btn-sm nav-cta" id="nav-cta-btn">Free Consultation</a>
-        <button class="hamburger" id="hamburger" aria-label="Open menu">
-          <span></span><span></span><span></span>
+        <a href="tel:8900415759" class="phone-btn" title="Call Siddho Support">
+          <i class="fa-solid fa-phone"></i>
+          <span>8900415759</span>
+        </a>
+        <a href="#contact" class="btn btn-primary">Start @ ₹299</a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero" id="hero">
-    <div class="hero-bg-blob blob1"></div>
-    <div class="hero-bg-blob blob2"></div>
-    <div class="hero-content">
-      <div class="hero-badge">🚀 Trusted by 84+ Local Businesses</div>
-      <h1 class="hero-title">Reliable <span class="gradient-text">Accounting</span>.<br />Stress-Free <span
-          class="gradient-text">Compliance.</span></h1>
-      <p class="hero-subtitle">Siddho CRM provides professional accounting, bookkeeping, tax consultancy, GST & TDS support, and practical business assistance so you can focus on growth with clarity.</p>
-      <div class="hero-stats">
-        <div class="stat-pill">
-          <span class="stat-num">84+</span>
-          <span class="stat-label">Happy Clients</span>
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-bg-glow"></div>
+    <div class="container hero-grid">
+      <div class="hero-text-content">
+        <div class="hero-badge">
+          <i class="fa-solid fa-robot"></i> Human + AI Combination Software
         </div>
-        <div class="stat-pill">
-          <span class="stat-num">₹2.5K+</span>
-          <span class="stat-label">Per Month</span>
+        <h1 class="hero-title">
+          Scale Your MSME with <span class="gradient-text">Smart Custom Software</span> & 24x7 AI Power.
+        </h1>
+        <p class="hero-subtitle">
+          Everything your business needs — Billing, Marketing, HR, Order Taking, E-Commerce & Custom Apps. Designed for local businesses with <strong>Free Domain, Free Hosting & Daily Cloud Backup</strong>.
+        </p>
+
+        <!-- Pricing Tagline Box -->
+        <div class="hero-pricing-box">
+          <div class="pricing-badge-main">
+            <span class="price-onboarding">₹299 <span>Onboarding</span></span>
+            <span class="price-separator">+</span>
+            <span class="price-monthly">₹15<span>/month</span></span>
+          </div>
+          <div class="pricing-note">
+            <i class="fa-solid fa-circle-check text-success"></i> No Hidden Fees. Cancel Anytime.
+          </div>
         </div>
-        <div class="stat-pill">
-          <span class="stat-num">Free</span>
-          <span class="stat-label">Consultation</span>
+
+        <div class="hero-cta-group">
+          <a href="#contact" class="btn btn-lg btn-glow"><i class="fa-solid fa-rocket"></i> Claim ₹299 Offer</a>
+          <a href="#calculator" class="btn btn-lg btn-outline"><i class="fa-solid fa-calculator"></i> Calculate ROI Savings</a>
+        </div>
+
+        <!-- Trust Pills -->
+        <div class="trust-pills">
+          <div class="pill-item"><i class="fa-solid fa-headset"></i> 24x7 Live Support</div>
+          <div class="pill-item"><i class="fa-solid fa-globe"></i> Free Domain & Hosting</div>
+          <div class="pill-item"><i class="fa-solid fa-cloud-arrow-up"></i> Automated Cloud Backup</div>
+          <div class="pill-item"><i class="fa-solid fa-comments"></i> Free Consultancy</div>
         </div>
       </div>
-      <div class="hero-cta-group">
-        <a href="#demo" class="btn btn-primary btn-lg" id="hero-demo-btn">📞 Book Free Consultation</a>
-        <a href="#services" class="btn btn-outline btn-lg" id="hero-services-btn">Explore Our Services</a>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="hero-card-stack">
-        <div class="hero-card card-top">
-          <div class="card-icon">🧾</div>
-          <div class="card-info">
-            <span class="card-title">Accounting Support</span>
-            <span class="card-sub">Accurate records</span>
+
+      <div class="hero-visual-content">
+        <div class="hero-card-wrapper">
+          <img src="hero_dashboard.jpg" alt="Siddho CRM Dashboard" class="hero-dashboard-img">
+          <div class="floating-stat stat-1">
+            <div class="stat-icon bg-cyan"><i class="fa-solid fa-bolt"></i></div>
+            <div>
+              <small>Speed</small>
+              <strong>10x Billing Speed</strong>
+            </div>
           </div>
-          <span class="card-badge live">Live</span>
-        </div>
-        <div class="hero-card card-mid">
-          <div class="card-icon">✅</div>
-          <div class="card-info">
-            <span class="card-title">GST & TDS</span>
-            <span class="card-sub">Timely filing</span>
+          <div class="floating-stat stat-2">
+            <div class="stat-icon bg-purple"><i class="fa-solid fa-shield-halved"></i></div>
+            <div>
+              <small>Cloud Security</small>
+              <strong>Daily Backups</strong>
+            </div>
           </div>
-          <span class="card-badge live">Live</span>
-        </div>
-        <div class="hero-card card-bot">
-          <div class="card-icon">👥</div>
-          <div class="card-info">
-            <span class="card-title">Manpower Support</span>
-            <span class="card-sub">Daily operations</span>
+          <div class="floating-stat stat-3">
+            <div class="stat-icon bg-green"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+            <div>
+              <small>Monthly Cost</small>
+              <strong>Only ₹15/mo</strong>
+            </div>
           </div>
-          <span class="card-badge live">Live</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== TRUST BAR ===== -->
-  <div class="trust-bar">
-    <div class="trust-inner">
-      <span>Serving businesses since 2026</span>
-      <span class="trust-dot">-</span>
-      <span>Local shops</span>
-      <span class="trust-dot">•</span>
-      <span>Restaurants</span>
-      <span class="trust-dot">•</span>
-      <span>Medicine stores</span>
-      <span class="trust-dot">•</span>
-      <span>Freelancers</span>
-      <span class="trust-dot">-</span>
-      <span>Based in Hooghly, West Bengal</span>
+  <!-- Value Props Banner -->
+  <section class="perks-bar">
+    <div class="container perks-grid">
+      <div class="perk-card">
+        <div class="perk-icon"><i class="fa-solid fa-people-arrows"></i></div>
+        <h3>Human + AI Synergy</h3>
+        <p>AI automates billing & analytics while real human experts assist your business 24x7.</p>
+      </div>
+      <div class="perk-card">
+        <div class="perk-icon"><i class="fa-solid fa-server"></i></div>
+        <h3>Free Hosting & Domain</h3>
+        <p>Zero server cost. We manage domain registration, fast SSL hosting, and cloud server health.</p>
+      </div>
+      <div class="perk-card">
+        <div class="perk-icon"><i class="fa-solid fa-database"></i></div>
+        <h3>Automated Cloud Backups</h3>
+        <p>Never lose your invoices, customer data, or ledger. Secured with encryption.</p>
+      </div>
+      <div class="perk-card">
+        <div class="perk-icon"><i class="fa-solid fa-building-user"></i></div>
+        <h3>Local Hooghly Presence</h3>
+        <p>Direct door-step setup, local consultation, and tailored Bengali & English interface support.</p>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <!-- ===== ABOUT ===== -->
-  <section class="section" id="about">
+  <!-- Core Services Section -->
+  <section class="services-section section-padding" id="services">
     <div class="container">
-      <div class="about-grid">
-        <div class="about-text">
-          <div class="section-tag">About Us</div>
-          <h2 class="section-title">Your Partner for Accounting & Compliance</h2>
-          <p class="about-desc">Founded in 2026 and based in <strong>Hooghly, West Bengal</strong>, Siddho CRM was built on a simple belief — every business deserves dependable accounting support without unnecessary complexity.</p>
-          <p class="about-desc">We help businesses stay organised with accounting, bookkeeping, tax consultancy, GST & TDS filing support, billing assistance, and manpower support tailored to their daily needs.</p>
+      <div class="section-header text-center">
+        <span class="sub-title">Tailored MSME Solutions</span>
+        <h2 class="section-title">All Your Business Tools in <span class="gradient-text">One Unified Suite</span></h2>
+        <p class="section-desc">We build custom software designed specifically for your store, agency, factory, or service business.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service 1 -->
+        <div class="service-card" data-service="billing">
+          <div class="card-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+          <h3>Smart Billing & Invoicing</h3>
+          <p>Generate thermal or PDF invoices in under 3 seconds. GST ready, barcode scanning, stock tracking, and payment QR integration.</p>
+          <ul class="service-checklist">
+            <li><i class="fa-solid fa-check"></i> Multi-counter & thermal print</li>
+            <li><i class="fa-solid fa-check"></i> WhatsApp invoice sending</li>
+          </ul>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card" data-service="marketing">
+          <div class="card-icon"><i class="fa-solid fa-bullhorn"></i></div>
+          <h3>Marketing & WhatsApp Automation</h3>
+          <p>Send promotional broadcasts, festival greetings, and payment reminder messages directly to your customers' WhatsApp.</p>
+          <ul class="service-checklist">
+            <li><i class="fa-solid fa-check"></i> Automated payment follow-ups</li>
+            <li><i class="fa-solid fa-check"></i> Customer loyalty & discounts</li>
+          </ul>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card" data-service="hr">
+          <div class="card-icon"><i class="fa-solid fa-user-gear"></i></div>
+          <h3>HR & Staff Attendance</h3>
+          <p>Track staff daily attendance, overtime, advance payments, salary slips, and performance metrics effortlessly.</p>
+          <ul class="service-checklist">
+            <li><i class="fa-solid fa-check"></i> One-click monthly salary generation</li>
+            <li><i class="fa-solid fa-check"></i> Mobile check-in & geotagging</li>
+          </ul>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card" data-service="ordertaking">
+          <div class="card-icon"><i class="fa-solid fa-utensils"></i></div>
+          <h3>Order Taking & POS System</h3>
+          <p>Perfect for restaurants, sweet shops, distributors, and retail counters. Quick kitchen display or field agent order booking.</p>
+          <ul class="service-checklist">
+            <li><i class="fa-solid fa-check"></i> Real-time kitchen & warehouse sync</li>
+            <li><i class="fa-solid fa-check"></i> Table & catalog manager</li>
+          </ul>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-card" data-service="ecommerce">
+          <div class="card-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+          <h3>E-Commerce Selling Platform</h3>
+          <p>Launch your online store in hours. Direct integration with your local inventory, WhatsApp order alerts, and payment gateways.</p>
+          <ul class="service-checklist">
+            <li><i class="fa-solid fa-check"></i> Zero transaction commissions</li>
+            <li><i class="fa-solid fa-check"></i> Custom domain shopping portal</li>
+          </ul>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-card" data-service="custom">
+          <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
+          <h3>Custom Web & App Development</h3>
+          <p>Get a stunning corporate website or dedicated Android/iOS mobile application customized to your unique brand workflows.</p>
+          <ul class="service-checklist">
+            <li><i class="fa-solid fa-check"></i> High performance UI/UX</li>
+            <li><i class="fa-solid fa-check"></i> Free domain & SSL hosting</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accounting & Taxation Spotlight Banner -->
+  <section class="accounting-spotlight section-padding" id="accounting">
+    <div class="container">
+      <div class="spotlight-card">
+        <div class="spotlight-badge"><i class="fa-solid fa-award"></i> Premium Business Add-on</div>
+        <div class="spotlight-grid">
+          <div class="spotlight-info">
+            <span class="sub-title text-accent">Stress-Free Finance</span>
+            <h2>Accounting & GST Taxation Services @ <span class="price-tag">₹799 / month</span></h2>
+            <p>Focus on growing your sales while our certified human accountants + AI tools handle your complete bookkeeping, GST filings, and tax compliance.</p>
+            
+            <div class="feature-bullets">
+              <div class="bullet-item">
+                <i class="fa-solid fa-calculator text-primary"></i>
+                <div>
+                  <strong>Monthly GST Return Filing</strong>
+                  <small>GSTR-1, GSTR-3B & reconciliation directly from Siddho Billing.</small>
+                </div>
+              </div>
+              <div class="bullet-item">
+                <i class="fa-solid fa-chart-line text-primary"></i>
+                <div>
+                  <strong>P&L & Balance Sheet Reports</strong>
+                  <small>Real-time profit tracking, expense categorization, and cash flow analysis.</small>
+                </div>
+              </div>
+              <div class="bullet-item">
+                <i class="fa-solid fa-user-shield text-primary"></i>
+                <div>
+                  <strong>Dedicated Tax Advisor</strong>
+                  <small>Expert guidance for income tax saving and audit readiness.</small>
+                </div>
+              </div>
+            </div>
+
+            <a href="#contact" class="btn btn-primary btn-lg mt-4"><i class="fa-solid fa-handshake"></i> Add Accounting Service @ ₹799</a>
+          </div>
+          
+          <div class="spotlight-box">
+            <div class="box-inner">
+              <div class="box-header">
+                <i class="fa-solid fa-file-invoice text-cyan"></i>
+                <span>Siddho Accounting Hub</span>
+              </div>
+              <div class="box-stats">
+                <div class="stat-row">
+                  <span>GST Compliance</span>
+                  <span class="badge badge-green">100% Up-To-Date</span>
+                </div>
+                <div class="stat-row">
+                  <span>Monthly GST Filing</span>
+                  <span class="badge badge-cyan">Auto Synced</span>
+                </div>
+                <div class="stat-row">
+                  <span>CA Consultancy</span>
+                  <span class="badge badge-purple">Included</span>
+                </div>
+                <div class="stat-row highlight">
+                  <span>Your Monthly Fee</span>
+                  <span class="total-price">₹799/mo</span>
+                </div>
+              </div>
+              <div class="box-footer">
+                <small><i class="fa-solid fa-circle-info"></i> Replaces expensive ₹10,000/mo accountants!</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive ROI & Savings Calculator Section -->
+  <section class="calculator-section section-padding" id="calculator">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-title">Unbeatable Value</span>
+        <h2 class="section-title">See How Much You <span class="gradient-text">Save Every Year</span></h2>
+        <p class="section-desc">Compare traditional software & accounting costs against Siddho CRM's transparent pricing.</p>
+      </div>
+
+      <div class="calculator-card">
+        <div class="calc-inputs">
+          <h3><i class="fa-solid fa-sliders text-cyan"></i> Customize Your Business Profile</h3>
+          
+          <div class="form-group">
+            <label for="software-count">Number of Software Modules Needed:</label>
+            <input type="range" id="software-count" min="1" max="6" value="3">
+            <div class="range-display"><span id="module-display">3</span> Modules (Billing + HR + Marketing)</div>
+          </div>
+
+          <div class="form-group toggle-group">
+            <label for="accounting-toggle" class="toggle-label">
+              <span>Include Accounting & Taxation (₹799/mo)?</span>
+              <span class="toggle-status-badge badge-on" id="toggle-status">ENABLED (+₹799/mo)</span>
+            </label>
+            <label for="accounting-toggle" class="toggle-switch">
+              <input type="checkbox" id="accounting-toggle" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="calc-breakdown">
+            <div class="breakdown-line">
+              <span>One-Time Onboarding:</span>
+              <strong>₹299</strong>
+            </div>
+            <div class="breakdown-line">
+              <span>Base CRM Subscription:</span>
+              <strong>₹15 / month</strong>
+            </div>
+            <div class="breakdown-line" id="acc-fee-line">
+              <span>Accounting & Taxation Add-on:</span>
+              <strong>₹799 / month</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc-results">
+          <div class="result-box market-cost">
+            <span>Market Price (Traditional Software + Accountant)</span>
+            <div class="result-amount" id="market-cost-display">₹105,000 / yr</div>
+          </div>
+
+          <div class="result-box siddho-cost">
+            <span>Siddho CRM Total (Year 1)</span>
+            <div class="result-amount highlight-text" id="siddho-cost-display">₹10,067 / yr</div>
+          </div>
+
+          <div class="savings-banner">
+            <i class="fa-solid fa-piggy-bank"></i>
+            <div>
+              <span>Estimated Annual Savings</span>
+              <strong id="savings-display">₹94,933 / year</strong>
+            </div>
+          </div>
+
+          <a href="#contact" class="btn btn-glow btn-block mt-4"><i class="fa-solid fa-check"></i> Lock In This Pricing Today</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transparent Pricing Plans Section -->
+  <section class="pricing-section section-padding" id="pricing">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-title">Simple & Fair</span>
+        <h2 class="section-title">Zero Hidden Fees, <span class="gradient-text">Maximum Power</span></h2>
+        <p class="section-desc">Choose what fits your current business stage.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Plan 1 -->
+        <div class="pricing-card">
+          <div class="plan-header">
+            <h3>Standard MSME Suite</h3>
+            <p>Ideal for kiranas, retail shops, clinics & local service providers.</p>
+            <div class="plan-price">
+              <span class="onboarding-fee">₹299 Setup</span>
+              <div class="price-val">₹15 <span>/ month</span></div>
+            </div>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fa-solid fa-check text-green"></i> Custom Billing & Invoicing</li>
+            <li><i class="fa-solid fa-check text-green"></i> HR & Attendance Tracker</li>
+            <li><i class="fa-solid fa-check text-green"></i> POS & Order Taking System</li>
+            <li><i class="fa-solid fa-check text-green"></i> Marketing & WhatsApp Sender</li>
+            <li><i class="fa-solid fa-check text-green"></i> <strong>Free Domain & Hosting</strong></li>
+            <li><i class="fa-solid fa-check text-green"></i> <strong>Automated Daily Cloud Backup</strong></li>
+            <li><i class="fa-solid fa-check text-green"></i> <strong>24x7 Live AI + Human Support</strong></li>
+            <li><i class="fa-solid fa-check text-green"></i> <strong>Free 1-on-1 Business Consultancy</strong></li>
+          </ul>
+          <a href="#contact" class="btn btn-outline btn-block">Choose Standard Suite</a>
+        </div>
+
+        <!-- Plan 2 (Featured) -->
+        <div class="pricing-card featured">
+          <div class="popular-badge">Most Popular for Growth</div>
+          <div class="plan-header">
+            <h3>Complete Business + Tax Suite</h3>
+            <p>Everything in Standard plus complete hands-off GST filing & CA support.</p>
+            <div class="plan-price">
+              <span class="onboarding-fee">₹299 Setup</span>
+              <div class="price-val">₹814 <span>/ month</span></div>
+              <small class="price-subtext">(₹15 CRM + ₹799 Accounting)</small>
+            </div>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fa-solid fa-star text-gold"></i> <strong>All Features of Standard Suite</strong></li>
+            <li><i class="fa-solid fa-check text-green"></i> Monthly GST-1 & GST-3B Filing</li>
+            <li><i class="fa-solid fa-check text-green"></i> Profit & Loss / Balance Sheet</li>
+            <li><i class="fa-solid fa-check text-green"></i> Purchase & Expense Ledger</li>
+            <li><i class="fa-solid fa-check text-green"></i> E-Commerce Platform Setup</li>
+            <li><i class="fa-solid fa-check text-green"></i> Custom Android App Option</li>
+            <li><i class="fa-solid fa-check text-green"></i> Dedicated Accountant Assignment</li>
+          </ul>
+          <a href="#contact" class="btn btn-glow btn-block">Get Full Business Suite</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section class="about-section section-padding" id="about">
+    <div class="container about-grid">
+      <div class="about-image-col">
+        <div class="about-card-graphic">
+          <div class="graphic-badge"><i class="fa-solid fa-location-dot"></i> Hooghly, West Bengal</div>
+          <h3>Local Presence • Global Standard</h3>
+          <p>Rooted in Hooghly, Siddho CRM was created to eliminate expensive, overly complex software subscriptions for Indian MSMEs.</p>
+          
           <div class="about-highlights">
-            <div class="highlight-item">
-              <span class="hi-icon">📍</span>
+            <div class="highlight-box">
+              <i class="fa-solid fa-shield-cat text-cyan"></i>
               <div>
-                <strong>Hooghly, West Bengal</strong>
-                <span>Local roots, local understanding</span>
+                <strong>Human + AI Model</strong>
+                <p>Fast automated response combined with warm, empathetic local human assistance.</p>
               </div>
             </div>
-            <div class="highlight-item">
-              <span class="hi-icon">🗓️</span>
+            <div class="highlight-box">
+              <i class="fa-solid fa-handshake-angle text-purple"></i>
               <div>
-                <strong>Established 2026</strong>
-                <span>Young, agile & always improving</span>
-              </div>
-            </div>
-            <div class="highlight-item">
-              <span class="hi-icon">🤝</span>
-              <div>
-                <strong>54+ Active Clients</strong>
-                <span>And growing every month</span>
+                <strong>Zero Technical Friction</strong>
+                <p>We set up your computer, printer, domain, and data transfer — free of hassle.</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="about-cards">
-          <div class="about-stat-card">
-            <div class="asc-num">84+</div>
-            <div class="asc-label">Businesses Served</div>
-          </div>
-          <div class="about-stat-card accent-card">
-            <div class="asc-num">₹2.5K+</div>
-            <div class="asc-label">Monthly Support</div>
-          </div>
-          <div class="about-stat-card">
-            <div class="asc-num">5+</div>
-            <div class="asc-label">Core Services</div>
-          </div>
-          <div class="about-stat-card accent-card">
-            <div class="asc-num">Free</div>
-            <div class="asc-label">Consultation</div>
-          </div>
-        </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ===== WHY CHOOSE US ===== -->
-  <section class="section section-alt" id="why-us">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-tag">Why Choose Us</div>
-        <h2 class="section-title">Reliable support for smarter financial decisions</h2>
-        <p class="section-sub">We combine modern thinking, practical expertise, and dependable service to help your business stay organised, compliant, and fully prepared for growth.</p>
-      </div>
-      <div class="why-grid">
-        <div class="why-card" id="why-card-1">
-          <div class="why-icon">💸</div>
-          <h3>Transparent Pricing</h3>
-          <p>Simple, modern plans with clear costs and no hidden charges, so you know exactly what you’re paying for.</p>
-        </div>
-        <div class="why-card" id="why-card-2">
-          <div class="why-icon">🎯</div>
-          <h3>Specialised Expertise</h3>
-          <p>Complete support for accounting, tax planning, GST & TDS filing, and everyday business operations.</p>
-        </div>
-        <div class="why-card" id="why-card-3">
-          <div class="why-icon">✅</div>
-          <h3>Compliance Support</h3>
-          <p>Stay on top of regulations with dependable support for filings, records, and timely business compliance.</p>
-        </div>
-        <div class="why-card" id="why-card-4">
-          <div class="why-icon">🙋</div>
-          <h3>Personal Attention</h3>
-          <p>We’re just a call or WhatsApp away, offering modern, personal support from people who truly understand your business.</p>
-        </div>
-        <div class="why-card" id="why-card-5">
-          <div class="why-icon">⚡</div>
-          <h3>Practical Guidance</h3>
-          <p>We simplify complex financial and compliance tasks with a modern, complete approach so you can act with confidence.</p>
-        </div>
-        <div class="why-card" id="why-card-6">
-          <div class="why-icon">🔄</div>
-          <h3>Flexible Support</h3>
-          <p>Scale your support as your business grows, whether you need complete bookkeeping, filing help, or dependable operational backing.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SERVICES ===== -->
-  <section class="section" id="services">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-tag">Our Services</div>
-        <h2 class="section-title">Accounting support that keeps your business organised</h2>
-        <p class="section-sub">Professional support for bookkeeping, tax compliance, GST & TDS filing, billing workflows, and skilled manpower assistance.</p>
-      </div>
-      <div class="services-list">
-
-        <div class="service-block" id="service-accounting">
-          <div class="service-img-wrap">
-            <img src="accounting.jpg" alt="Accounting & Bookkeeping Services – Siddho CRM" class="service-img" loading="lazy" />
-            <div class="service-img-overlay">
-              <span class="service-label">Accounting</span>
+      <div class="about-text-col">
+        <span class="sub-title">Why Siddho CRM?</span>
+        <h2>Empowering Local MSMEs with <span class="gradient-text">Affordable Technology</span></h2>
+        <p class="lead-p">We believe every business owner in Hooghly, Serampore, Chandannagar, Chinsurah, and across West Bengal deserves enterprise-level tools without paying tens of thousands per year.</p>
+        <p>Whether you need a simple fast billing counter, WhatsApp customer broadcasts, staff attendance, or complete GST accounting, Siddho CRM brings all tools under one roof at an unheard-of price of <strong>₹299 setup & ₹15 monthly</strong>.</p>
+        
+        <div class="contact-quick-info">
+          <div class="q-item">
+            <i class="fa-solid fa-phone text-cyan"></i>
+            <div>
+              <small>Call / WhatsApp Support</small>
+              <strong><a href="tel:8900415759">8900415759</a></strong>
             </div>
           </div>
-          <div class="service-info">
-            <div class="service-tag-icon">🧾</div>
-            <h3>Accounting & Bookkeeping</h3>
-            <p>Professional accounting support for accurate records, financial clarity, and better business decisions.</p>
-            <ul class="service-features">
-              <li>✅ Clean bookkeeping and ledger maintenance</li>
-              <li>✅ Bank reconciliation and organised records</li>
-              <li>✅ Monthly financial reporting</li>
-              <li>✅ Clear support for everyday business decisions</li>
-            </ul>
-            <a href="#demo" class="btn btn-outline btn-sm">Book a Consultation</a>
-          </div>
-        </div>
-
-        <div class="service-block reverse" id="service-tax">
-          <div class="service-img-wrap">
-            <img src="tax.jpg" alt="Tax Consultancy – Siddho CRM" class="service-img" loading="lazy" />
-            <div class="service-img-overlay">
-              <span class="service-label">Tax Consultancy</span>
+          <div class="q-item">
+            <i class="fa-solid fa-map-location-dot text-purple"></i>
+            <div>
+              <small>Main Office</small>
+              <strong>Hooghly, West Bengal, India</strong>
             </div>
-          </div>
-          <div class="service-info">
-            <div class="service-tag-icon">🧠</div>
-            <h3>Tax Consultancy</h3>
-            <p>Practical tax guidance for planning, compliance, and smoother operations.</p>
-            <ul class="service-features">
-              <li>✅ Tax planning and advisory support</li>
-              <li>✅ Compliance-focused guidance</li>
-              <li>✅ Support for smarter business decisions</li>
-              <li>✅ Clear documentation and follow-up</li>
-            </ul>
-            <a href="#demo" class="btn btn-outline btn-sm">Request Tax Guidance</a>
-          </div>
-        </div>
-
-        <div class="service-block" id="service-gst">
-          <div class="service-img-wrap">
-            <img src="gst.jpg" alt="GST & TDS Returns – Siddho CRM" class="service-img" loading="lazy" />
-            <div class="service-img-overlay">
-              <span class="service-label">GST & TDS</span>
-            </div>
-          </div>
-          <div class="service-info">
-            <div class="service-tag-icon">✅</div>
-            <h3>GST & TDS Returns</h3>
-            <p>Reliable filing support for both GST and TDS with timely reminders and documentation.</p>
-            <ul class="service-features">
-              <li>✅ GST return filing support</li>
-              <li>✅ TDS filing and documentation</li>
-              <li>✅ Deadline reminders and follow-up</li>
-              <li>✅ Accurate records for compliance</li>
-            </ul>
-            <a href="#demo" class="btn btn-outline btn-sm">Get Filing Support</a>
-          </div>
-        </div>
-
-        <div class="service-block reverse" id="service-billing">
-          <div class="service-img-wrap">
-            <img src="invoice.jpg" alt="Billing & Invoicing Software – Siddho CRM" class="service-img" loading="lazy" />
-            <div class="service-img-overlay">
-              <span class="service-label">Billing Software</span>
-            </div>
-          </div>
-          <div class="service-info">
-            <div class="service-tag-icon">💻</div>
-            <h3>Billing & Invoicing Software</h3>
-            <p>Tailored software solutions that streamline billing and invoicing workflows with speed and clarity.</p>
-            <ul class="service-features">
-              <li>✅ Professional invoice generation</li>
-              <li>✅ Simple billing workflows</li>
-              <li>✅ Digital recordkeeping support</li>
-              <li>✅ Easy workflow for daily operations</li>
-            </ul>
-            <a href="#demo" class="btn btn-outline btn-sm">Explore Billing Support</a>
-          </div>
-        </div>
-
-        <div class="service-block" id="service-manpower">
-          <div class="service-img-wrap">
-            <img src="manpower.jpg" alt="Manpower Services – Siddho CRM" class="service-img" loading="lazy" />
-            <div class="service-img-overlay">
-              <span class="service-label">Manpower Services</span>
-            </div>
-          </div>
-          <div class="service-info">
-            <div class="service-tag-icon">👥</div>
-            <h3>Manpower Services</h3>
-            <p>Skilled manpower support to strengthen daily operations and business growth.</p>
-            <ul class="service-features">
-              <li>✅ Operational support for daily tasks</li>
-              <li>✅ Trained manpower for business needs</li>
-              <li>✅ Flexible support for busy periods</li>
-              <li>✅ Better organisation and productivity</li>
-            </ul>
-            <a href="#demo" class="btn btn-outline btn-sm">Discuss Manpower Needs</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== PLANS ===== -->
-  <section class="section section-alt" id="plans">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-tag">Pricing Plans</div>
-        <h2 class="section-title">Simple pricing for dependable accounting support</h2>
-        <p class="section-sub">Choose a plan that fits your business size and compliance needs, with clear support and no surprises.</p>
-      </div>
-      <div class="plans-grid">
-        <div class="plan-card" id="plan-starter">
-          <div class="plan-badge">Best for Small Businesses</div>
-          <div class="plan-icon">📘</div>
-          <h3 class="plan-name">Starter Support</h3>
-          <div class="plan-price">
-            <span class="price-amount">₹2,499</span>
-            <span class="price-period">per month</span>
-          </div>
-          <p class="plan-desc">Bookkeeping, financial record maintenance, and monthly reporting support for growing businesses.</p>
-          <ul class="plan-features">
-            <li>✅ Monthly bookkeeping support</li>
-            <li>✅ Ledger and reconciliation help</li>
-            <li>✅ Basic financial reporting</li>
-            <li>✅ WhatsApp support</li>
-          </ul>
-          <a href="#demo" class="btn btn-outline btn-full">Get Starter Plan</a>
-        </div>
-
-        <div class="plan-card plan-featured" id="plan-growth">
-          <div class="plan-badge">Most Popular</div>
-          <div class="plan-icon">⭐</div>
-          <h3 class="plan-name">Growth Plan</h3>
-          <div class="plan-price">
-            <span class="price-amount">₹4,999</span>
-            <span class="price-period">per month</span>
-          </div>
-          <p class="plan-desc">Complete support for accounting, tax guidance, GST & TDS filing, and smoother business operations.</p>
-          <ul class="plan-features">
-            <li>✅ Accounting & bookkeeping support</li>
-            <li>✅ Tax consultancy & compliance guidance</li>
-            <li>✅ GST & TDS filing support</li>
-            <li>✅ Billing workflow assistance</li>
-            <li>✅ Priority response on WhatsApp</li>
-          </ul>
-          <a href="#demo" class="btn btn-primary btn-full">Choose Growth Plan</a>
-        </div>
-
-        <div class="plan-card" id="plan-custom">
-          <div class="plan-badge">For Larger Needs</div>
-          <div class="plan-icon">🏢</div>
-          <h3 class="plan-name">Custom Support</h3>
-          <div class="plan-price">
-            <span class="price-amount">Let's Talk</span>
-          </div>
-          <p class="plan-desc">Need dedicated support for multiple processes, manpower assistance, or advanced accounting requirements?</p>
-          <ul class="plan-features">
-            <li>✅ Everything in Growth Plan</li>
-            <li>✅ Manpower coordination support</li>
-            <li>✅ Tailored add-ons for your business</li>
-            <li>✅ Dedicated consultation and planning</li>
-          </ul>
-          <a href="#contact" class="btn btn-outline btn-full">Contact Us</a>
-        </div>
-      </div>
-
-      <div class="price-note">
-        <span>💡</span>
-        <p>All plans begin with a free consultation. You can scale up as your accounting and compliance needs grow, with clear support and no hidden charges.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CONSULTATION SECTION ===== -->
-  <section class="section demo-section" id="demo">
-    <div class="container">
-      <div class="demo-inner">
-        <div class="demo-text">
-          <div class="section-tag">Free Consultation</div>
-          <h2 class="section-title">Let’s simplify your accounting and compliance</h2>
-          <p>Share your requirements and we’ll suggest the right support plan for your books, tax filing, and day-to-day operations.</p>
-          <div class="demo-perks">
-            <div class="demo-perk">📊 Bookkeeping & reporting support</div>
-            <div class="demo-perk">🧾 GST & TDS guidance</div>
-            <div class="demo-perk">💬 Fast WhatsApp support</div>
-            <div class="demo-perk">✅ No pressure, no hidden charges</div>
-          </div>
-        </div>
-        <form class="demo-form" id="demo-form" onsubmit="handleDemoSubmit(event)">
-          <div class="form-group">
-            <label for="demo-name">Your Name</label>
-            <input type="text" id="demo-name" placeholder="e.g. Rajan Das" required />
-          </div>
-          <div class="form-group">
-            <label for="demo-phone">WhatsApp Number</label>
-            <input type="tel" id="demo-phone" placeholder="e.g. 98300 XXXXX" required />
-          </div>
-          <div class="form-group">
-            <label for="demo-biz">Business Type</label>
-            <select id="demo-biz" required>
-              <option value="" disabled selected>Select your business type</option>
-              <option>Retail / Shop</option>
-              <option>Restaurant / Food Business</option>
-              <option>Pharmacy / Medical Store</option>
-              <option>Freelancer / Service Provider</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="demo-need">What do you need help with?</label>
-            <select id="demo-need">
-              <option value="" disabled selected>Select service</option>
-              <option>Accounting & Bookkeeping</option>
-              <option>Tax Consultancy</option>
-              <option>GST & TDS Returns</option>
-              <option>Billing & Invoicing Software</option>
-              <option>Manpower Services</option>
-              <option>Multiple services</option>
-            </select>
-          </div>
-          <button type="submit" class="btn btn-primary btn-full" id="demo-submit-btn">📩 Request Free Consultation</button>
-          <p class="form-note">By submitting, you agree to be contacted on WhatsApp for a consultation.</p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FAQ ===== -->
-  <section class="section" id="faq">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-tag">FAQ</div>
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <p class="section-sub">Everything you want to know before getting started.</p>
-      </div>
-      <div class="faq-list" id="faq-list">
-        <div class="faq-item" id="faq-1">
-          <button class="faq-question" onclick="toggleFaq('faq-1')">
-            What services do you provide? <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer">
-            <p>We provide accounting and bookkeeping support, tax consultancy, GST & TDS filing support, billing & invoicing assistance, and manpower support for daily operations.</p>
-          </div>
-        </div>
-        <div class="faq-item" id="faq-2">
-          <button class="faq-question" onclick="toggleFaq('faq-2')">
-            How are your plans priced? <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer">
-            <p>We offer a Starter Support plan for ₹2,499/month and a Growth Plan for ₹4,999/month. Custom support is also available for larger or more specific requirements.</p>
-          </div>
-        </div>
-        <div class="faq-item" id="faq-3">
-          <button class="faq-question" onclick="toggleFaq('faq-3')">
-            Do you offer a free consultation? <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer">
-            <p>Yes. We start with a free consultation so we can understand your needs and suggest the right service plan for your business.</p>
-          </div>
-        </div>
-        <div class="faq-item" id="faq-4">
-          <button class="faq-question" onclick="toggleFaq('faq-4')">
-            Which businesses do you support? <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer">
-            <p>We support local shops, restaurants, pharmacies, freelancers, service providers, and other growing businesses that need dependable accounting and compliance help.</p>
-          </div>
-        </div>
-        <div class="faq-item" id="faq-5">
-          <button class="faq-question" onclick="toggleFaq('faq-5')">
-            Do you help with GST and TDS filing? <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer">
-            <p>Yes. We offer filing support for GST and TDS, along with reminders, documentation support, and practical guidance for compliance.</p>
-          </div>
-        </div>
-        <div class="faq-item" id="faq-6">
-          <button class="faq-question" onclick="toggleFaq('faq-6')">
-            Can I change my service plan later? <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer">
-            <p>Absolutely. You can upgrade or adjust your support plan as your business needs change, and we’ll help you choose the right option.</p>
-          </div>
-        </div>
-        <div class="faq-item" id="faq-7">
-          <button class="faq-question" onclick="toggleFaq('faq-7')">
-            Do you work with clients remotely? <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer">
-            <p>Yes. We work smoothly with remote clients through WhatsApp, phone calls, and document sharing, making support simple and convenient.</p>
-          </div>
-        </div>
-        <div class="faq-item" id="faq-8">
-          <button class="faq-question" onclick="toggleFaq('faq-8')">
-            How quickly do you respond? <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer">
-            <p>We aim to respond quickly through WhatsApp and phone support so your questions and deadlines are handled without delay.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== TESTIMONIALS ===== -->
-  <section class="section section-alt" id="testimonials">
+  <!-- Testimonials Section -->
+  <section class="testimonials-section section-padding">
     <div class="container">
-      <div class="section-header">
-        <div class="section-tag">Client Stories</div>
-        <h2 class="section-title">What Our Clients Say</h2>
-        <p class="section-sub">Real businesses, real results. Hear it from the people using Siddho CRM every day.</p>
+      <div class="section-header text-center">
+        <span class="sub-title">Success Stories</span>
+        <h2 class="section-title">Trusted by Local <span class="gradient-text">Business Owners</span></h2>
+        <p class="section-desc">Here is what MSME leaders in Bengal say about Siddho CRM.</p>
       </div>
+
       <div class="testimonials-grid">
-        <div class="testi-card" id="testi-1">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"Siddho CRM helped me organise my records and understand my monthly accounts without stress. Everything feels much clearer now."</p>
-          <div class="testi-author">
-            <div class="testi-avatar">RM</div>
+        <div class="testimonial-card">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p class="quote">"Siddho CRM replaced 3 different paid applications for billing and staff management. Billing takes 3 seconds and my GST filing is handled automatically for just ₹799/mo."</p>
+          <div class="author-info">
+            <div class="author-avatar">RK</div>
             <div>
-              <strong>Ramesh Mondal</strong>
-              <span>Kirana Shop, Chinsurah</span>
+              <strong>Rajesh Kumar Ghosh</strong>
+              <small>Hardware Store Owner, Chinsurah</small>
             </div>
           </div>
         </div>
-        <div class="testi-card" id="testi-2">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"The tax support and reminders made our filing process much smoother. We no longer worry about missing deadlines."</p>
-          <div class="testi-author">
-            <div class="testi-avatar">SP</div>
+
+        <div class="testimonial-card">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p class="quote">"The Human + AI combination is incredible. Whenever I have a custom request for my sweet shop order counter, the team in Hooghly updates my software immediately."</p>
+          <div class="author-info">
+            <div class="author-avatar">SD</div>
             <div>
-              <strong>Santanu Paul</strong>
-              <span>Restaurant Owner, Serampore</span>
+              <strong>Sourav Das</strong>
+              <small>Confectionery & Bakery, Serampore</small>
             </div>
           </div>
         </div>
-        <div class="testi-card" id="testi-3">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"The bookkeeping support helped us keep our pharmacy accounts accurate and organised. It made day-to-day decisions much easier."</p>
-          <div class="testi-author">
-            <div class="testi-avatar">PD</div>
+
+        <div class="testimonial-card">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p class="quote">"Free domain and hosting with ₹15/month subscription sounded unbelievable initially, but they delivered exactly as promised! Best decision for our boutique shop."</p>
+          <div class="author-info">
+            <div class="author-avatar">MB</div>
             <div>
-              <strong>Pranab Das</strong>
-              <span>Pharmacy Owner, Hooghly</span>
-            </div>
-          </div>
-        </div>
-        <div class="testi-card" id="testi-4">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"The billing support gave us a cleaner process and better invoice tracking. It saved us time and reduced mistakes."</p>
-          <div class="testi-author">
-            <div class="testi-avatar">AG</div>
-            <div>
-              <strong>Ananya Ghosh</strong>
-              <span>Boutique Owner, Chandannagar</span>
-            </div>
-          </div>
-        </div>
-        <div class="testi-card" id="testi-5">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"As a freelancer, I needed simple accounting support without the complexity. Siddho CRM made everything feel manageable."</p>
-          <div class="testi-author">
-            <div class="testi-avatar">KB</div>
-            <div>
-              <strong>Koushik Banerjee</strong>
-              <span>Freelance Designer, Rishra</span>
-            </div>
-          </div>
-        </div>
-        <div class="testi-card" id="testi-6">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"The consultation was very clear and practical. We got the right guidance for our accounts and filings without any confusion."</p>
-          <div class="testi-author">
-            <div class="testi-avatar">MS</div>
-            <div>
-              <strong>Mamata Sen</strong>
-              <span>Clothing Store, Uttarpara</span>
+              <strong>Mousumi Banerjee</strong>
+              <small>Apparel & E-commerce, Chandannagar</small>
             </div>
           </div>
         </div>
@@ -652,120 +540,212 @@
     </div>
   </section>
 
-  <!-- ===== CTA BANNER ===== -->
-  <section class="cta-banner" id="cta-banner">
-    <div class="cta-blob"></div>
+  <!-- FAQ Accordion Section -->
+  <section class="faq-section section-padding" id="faq">
     <div class="container">
-      <div class="cta-inner">
-        <h2>Ready to Simplify Your Accounts?</h2>
-        <p>Join 54+ local businesses already getting dependable accounting, compliance, and operational support from Siddho CRM.<br />Book your free consultation today.</p>
-        <div class="cta-group">
-          <a href="#demo" class="btn btn-white btn-lg" id="cta-demo-btn">📞 Book Free Consultation</a>
-          <a href="https://wa.me/918900415759" class="btn btn-ghost-white btn-lg" id="cta-wa-btn" target="_blank">💬
-            Chat on WhatsApp</a>
+      <div class="section-header text-center">
+        <span class="sub-title">Got Questions?</span>
+        <h2 class="section-title">Frequently Asked <span class="gradient-text">Questions</span></h2>
+        <p class="section-desc">Clear answers about our software, onboarding, and support.</p>
+      </div>
+
+      <div class="faq-accordion">
+        <!-- FAQ 1 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Is the ₹15/month subscription really complete without hidden charges?</span>
+            <i class="fa-solid fa-chevron-down icon-toggle"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, absolutely! At Siddho CRM, we maintain transparency. The ₹15/month fee covers your ongoing software access, software updates, free domain hosting maintenance, daily cloud backup, and 24x7 AI support after a one-time onboarding setup fee of ₹299.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What is included in the ₹299 Onboarding fee?</span>
+            <i class="fa-solid fa-chevron-down icon-toggle"></i>
+          </button>
+          <div class="faq-answer">
+            <p>The ₹299 onboarding covers full software setup tailored to your business, initial item/inventory upload, printer configuration, domain connection, free consultancy session, and staff training.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How does the Human + AI combination work?</span>
+            <i class="fa-solid fa-chevron-down icon-toggle"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Our AI engines operate 24/7 inside the CRM to speed up invoice generation, customer messaging, and automated reports. Meanwhile, our dedicated human engineering and accounting team in Hooghly handles complex custom setup, phone support, and tax filings.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How does the Accounting & Taxation Service at ₹799/month work?</span>
+            <i class="fa-solid fa-chevron-down icon-toggle"></i>
+          </button>
+          <div class="faq-answer">
+            <p>By opting into our ₹799/month add-on, your billing data in Siddho CRM syncs directly with our tax team. We file your monthly GST-1, GSTR-3B, manage your P&L statements, and provide year-round CA guidance without needing external high-cost accountants.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Is my business data secure with daily cloud backups?</span>
+            <i class="fa-solid fa-chevron-down icon-toggle"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. All customer data, sales records, and financial ledger items are encrypted with bank-level security and automatically backed up to isolated cloud storage daily.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How do I get started or request doorstep installation in Hooghly?</span>
+            <i class="fa-solid fa-chevron-down icon-toggle"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Fill out the contact form below or directly call/WhatsApp us at <strong>8900415759</strong>. Our team will contact you within 30 minutes for a free demo and consultation!</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer" id="contact">
+  <!-- Lead Capture / Contact Section -->
+  <section class="contact-section section-padding" id="contact">
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="#" class="logo">
-            <img src="favicon.png" alt="Siddho CRM Logo" class="logo-icon" />
-            <span class="logo-text">Siddho<span class="accent">CRM</span></span>
-          </a>
-          <p class="footer-tagline">Professional accounting, tax and compliance support for businesses in West Bengal & All over INDIA. An initiative by Saswata Ghosh & Team to digitize our local MSMEs.</p>
-          <div class="footer-social">
-            <a href="#" class="social-btn" id="footer-fb" title="Facebook">f</a>
-            <a href="#" class="social-btn" id="footer-wa" title="WhatsApp">W</a>
-            <a href="#" class="social-btn" id="footer-ig" title="Instagram">ig</a>
+      <div class="contact-grid">
+        <div class="contact-info-col">
+          <span class="sub-title">Get In Touch</span>
+          <h2>Ready to Supercharge Your Business?</h2>
+          <p>Book your <strong>Free Consultancy</strong> session or activate your ₹299 onboarding today.</p>
+
+          <div class="contact-cards">
+            <a href="tel:8900415759" class="c-card">
+              <div class="c-icon bg-cyan"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <small>Direct Call</small>
+                <strong>8900415759</strong>
+              </div>
+            </a>
+
+            <a href="https://wa.me/918900415759?text=Hi%20Siddho%20CRM,%20I%20want%20to%20know%20more%20about%20your%20software%20and%20consultancy." target="_blank" class="c-card">
+              <div class="c-icon bg-green"><i class="fa-brands fa-whatsapp"></i></div>
+              <div>
+                <small>WhatsApp Chat</small>
+                <strong>+91 8900415759</strong>
+              </div>
+            </a>
+
+            <div class="c-card">
+              <div class="c-icon bg-purple"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <small>Office Location</small>
+                <strong>Hooghly, West Bengal, India</strong>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="footer-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#why-us">Why Choose Us</a></li>
-            <li><a href="#services">Our Services</a></li>
-            <li><a href="#plans">Plans & Pricing</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#testimonials">Client Stories</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#service-accounting">Accounting & Bookkeeping</a></li>
-            <li><a href="#service-tax">Tax Consultancy</a></li>
-            <li><a href="#service-gst">GST & TDS Returns</a></li>
-            <li><a href="#service-billing">Billing & Invoicing Software</a></li>
-            <li><a href="#service-manpower">Manpower Services</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Contact Us</h4>
-          <ul class="footer-contact-list">
-            <li>
-              <span>📍</span>
-              <span>Hooghly, West Bengal, India</span>
-            </li>
-            <li>
-              <span>📞</span>
-              <a href="tel:+918900745759">+91 89004 15759</a>
-            </li>
-            <li>
-              <span>💬</span>
-              <a href="https://wa.me/918900415759" target="_blank">WhatsApp Us</a>
-            </li>
-            <li>
-              <span>✉️</span>
-              <a href="mailto:support@siddhocrm.in">support@siddhocrm.in</a>
-            </li>
-            <li>
-              <span>🕘</span>
-              <span>Mon–Sat, 9 AM – 8 PM</span>
-            </li>
-          </ul>
+
+        <div class="contact-form-col">
+          <div class="form-wrapper">
+            <h3><i class="fa-solid fa-paper-plane text-cyan"></i> Request Free Callback</h3>
+            <form id="lead-form">
+              <div class="form-group">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" required placeholder="e.g. Ramesh Ghosh">
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone / WhatsApp Number *</label>
+                <input type="tel" id="phone" required placeholder="e.g. 9876543210">
+              </div>
+
+              <div class="form-group">
+                <label for="business">Business Name & Location</label>
+                <input type="text" id="business" placeholder="e.g. Ghosh Retail, Hooghly">
+              </div>
+
+              <div class="form-group">
+                <label>Interested Services:</label>
+                <div class="checkbox-grid">
+                  <label><input type="checkbox" name="service" value="Billing" checked> Billing & POS</label>
+                  <label><input type="checkbox" name="service" value="Marketing"> WhatsApp Marketing</label>
+                  <label><input type="checkbox" name="service" value="HR"> HR & Attendance</label>
+                  <label><input type="checkbox" name="service" value="Ecommerce"> E-Commerce / App</label>
+                  <label><input type="checkbox" name="service" value="Accounting"> Accounting @ ₹799/mo</label>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-glow btn-block"><i class="fa-solid fa-paper-plane"></i> Submit Request</button>
+            </form>
+            <div id="form-status" class="form-status"></div>
+          </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>© 2026 Siddho CRM. All rights reserved. Made with ❤️ in Hooghly, West Bengal.</p>
-        <p>Free consultation · Flexible monthly support · Clear service plans</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col brand-col">
+        <a href="#" class="brand-logo">
+          <img src="logo.jpg" alt="Siddho CRM Logo" class="footer-logo-img">
+        </a>
+        <p>Human + AI powered enterprise business software built specifically for local MSMEs in Hooghly & West Bengal.</p>
+        <p class="address-text"><i class="fa-solid fa-location-dot"></i> Hooghly, West Bengal, India | 📞 8900415759</p>
       </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Billing & Invoicing</a></li>
+          <li><a href="#services">WhatsApp Marketing</a></li>
+          <li><a href="#services">HR & Staff Payroll</a></li>
+          <li><a href="#services">POS Order Taking</a></li>
+          <li><a href="#services">E-Commerce Platforms</a></li>
+          <li><a href="#services">Custom Apps & Websites</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Key Highlights</h4>
+        <ul>
+          <li><a href="#accounting">Accounting & Taxation @ ₹799</a></li>
+          <li><a href="#pricing">₹299 Setup & ₹15/mo Plan</a></li>
+          <li><a href="#about">24x7 AI + Human Support</a></li>
+          <li><a href="#faq">Free Domain & Cloud Backup</a></li>
+          <li><a href="#contact">Free Business Consultancy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Action</h4>
+        <p>Have questions? Chat directly on WhatsApp or call our Hooghly desk.</p>
+        <a href="https://wa.me/918900415759" target="_blank" class="btn btn-sm btn-green"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Siddho CRM. All Rights Reserved. Empowering Hooghly MSMEs.</p>
     </div>
   </footer>
 
-  <!-- Success Toast -->
-  <div class="toast" id="toast">
-    <span class="toast-icon">✅</span>
-    <span>Demo request sent! We'll reach out on WhatsApp within 24 hours.</span>
-  </div>
-
-  <!-- Back to top -->
-  <button class="back-to-top" id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"
-    title="Back to top" aria-label="Back to top">
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M6 14.5L12 8.5L18 14.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </button>
-
-  <!-- Floating WhatsApp Button -->
-  <a class="music-player" id="music-player" href="https://wa.me/918900415759" target="_blank" rel="noopener" title="Chat on WhatsApp">
-    <span class="music-btn" id="music-btn" aria-label="Chat on WhatsApp">
-      <span class="music-icon" id="music-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.029-.966-.272-.099-.471-.149-.67.149-.198.297-.768.966-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.149-.174.199-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.208-.242-.579-.487-.501-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.521.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.979 1-3.648-.235-.374a9.85 9.85 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.887-9.884 2.64 0 5.122 1.03 6.988 2.898A9.825 9.825 0 0 1 19.86 10.14c0 5.45-4.434 9.884-9.884 9.884m8.413-18.297A11.815 11.815 0 0 0 10.14 0C4.557 0 0 4.557 0 10.14a10.1 10.1 0 0 0 1.352 5.024l-1.434 5.25 5.386-1.414a10.14 10.14 0 0 0 4.856 1.24h.004c5.583 0 10.14-4.557 10.14-10.14 0-2.711-1.057-5.256-2.977-7.176" fill="currentColor"/>
-        </svg>
-      </span>
-        <span></span><span></span><span></span><span></span>
-      </span>
-    </span>
+  <!-- Floating WhatsApp Action Button -->
+  <a href="https://wa.me/918900415759?text=Hi%20Siddho%20CRM!%20I%20am%20interested%20in%20the%20299%20onboarding%20and%2015rs%20monthly%20plan." class="floating-whatsapp" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="tooltip">Instant Support (8900415759)</span>
   </a>
 
   <script src="script.js"></script>
 </body>
-
 </html>
