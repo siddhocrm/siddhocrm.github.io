@@ -3,25 +3,45 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileToggle = document.getElementById('mobile-toggle');
   const navMenu = document.getElementById('nav-menu');
 
+  const closeMenu = () => {
+    if (!navMenu) return;
+    navMenu.classList.remove('active');
+    document.body.style.overflow = '';
+    const icon = mobileToggle && mobileToggle.querySelector('i');
+    if (icon) icon.className = 'fa-solid fa-bars';
+  };
+
   if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navMenu.classList.toggle('active');
       const icon = mobileToggle.querySelector('i');
-      if (navMenu.classList.contains('active')) {
+      if (isOpen) {
         icon.className = 'fa-solid fa-xmark';
+        document.body.style.overflow = 'hidden'; // Lock scroll when menu open
       } else {
         icon.className = 'fa-solid fa-bars';
+        document.body.style.overflow = '';
       }
     });
 
-    // Close menu when link is clicked
+    // Close menu when a nav link is clicked
     document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        if (mobileToggle.querySelector('i')) {
-          mobileToggle.querySelector('i').className = 'fa-solid fa-bars';
-        }
-      });
+      link.addEventListener('click', closeMenu);
+    });
+
+    // Close menu on outside click / tap
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('active') &&
+          !navMenu.contains(e.target) &&
+          !mobileToggle.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    // Close menu on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
     });
   }
 
