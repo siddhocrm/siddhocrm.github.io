@@ -1430,6 +1430,11 @@ input:checked + .slider:before {
   font-weight: 700 !important;
 }
 
+.footer-col a.btn-green {
+  margin-top: 20px;
+  display: inline-block;
+}
+
 .footer-col a.btn-green:hover,
 .footer-col a.btn-green:hover i,
 .footer-col a.btn-green:hover * {
@@ -1780,6 +1785,19 @@ input:checked + .slider:before {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .brand-col .brand-logo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .brand-col .footer-logo-img {
+    display: block;
+    margin: 0 auto;
   }
 
   .footer-col {
