@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+  // =============================================
   // Mobile Nav Toggle
+  // =============================================
   const mobileToggle = document.getElementById('mobile-toggle');
   const navMenu = document.getElementById('nav-menu');
 
@@ -18,19 +21,19 @@ document.addEventListener('DOMContentLoaded', () => {
       const icon = mobileToggle.querySelector('i');
       if (isOpen) {
         icon.className = 'fa-solid fa-xmark';
-        document.body.style.overflow = 'hidden'; // Lock scroll when menu open
+        document.body.style.overflow = 'hidden';
       } else {
         icon.className = 'fa-solid fa-bars';
         document.body.style.overflow = '';
       }
     });
 
-    // Close menu when a nav link is clicked
+    // Close on nav link click
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', closeMenu);
     });
 
-    // Close menu on outside click / tap
+    // Close on outside click / tap
     document.addEventListener('click', (e) => {
       if (navMenu.classList.contains('active') &&
           !navMenu.contains(e.target) &&
@@ -39,38 +42,38 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Close menu on Escape key
+    // Close on Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeMenu();
     });
   }
 
-  // FAQ Accordion Logic
+
+  // =============================================
+  // FAQ Accordion
+  // =============================================
   const faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach(item => {
     const questionBtn = item.querySelector('.faq-question');
     questionBtn.addEventListener('click', () => {
       const isActive = item.classList.contains('active');
-      
-      // Close all other FAQs
       faqItems.forEach(i => i.classList.remove('active'));
-
-      if (!isActive) {
-        item.classList.add('active');
-      }
+      if (!isActive) item.classList.add('active');
     });
   });
 
-  // Interactive ROI Calculator Logic
-  const softwareSlider = document.getElementById('software-count');
-  const moduleDisplay = document.getElementById('module-display');
-  const accountingToggle = document.getElementById('accounting-toggle');
-  const toggleStatus = document.getElementById('toggle-status');
-  const accFeeLine = document.getElementById('acc-fee-line');
 
+  // =============================================
+  // ROI Calculator
+  // =============================================
+  const softwareSlider    = document.getElementById('software-count');
+  const moduleDisplay     = document.getElementById('module-display');
+  const accountingToggle  = document.getElementById('accounting-toggle');
+  const toggleStatus      = document.getElementById('toggle-status');
+  const accFeeLine        = document.getElementById('acc-fee-line');
   const marketCostDisplay = document.getElementById('market-cost-display');
   const siddhoCostDisplay = document.getElementById('siddho-cost-display');
-  const savingsDisplay = document.getElementById('savings-display');
+  const savingsDisplay    = document.getElementById('savings-display');
 
   const updateCalculator = () => {
     if (!softwareSlider || !accountingToggle) return;
@@ -83,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (toggleStatus) {
       if (includeAccounting) {
-        toggleStatus.textContent = 'ENABLED (+₹799/mo)';
+        toggleStatus.textContent = 'ENABLED (+\u20b9799/mo)';
         toggleStatus.className = 'toggle-status-badge badge-on';
       } else {
         toggleStatus.textContent = 'DISABLED';
@@ -91,72 +94,134 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // Market Cost Calculation: ~ ₹18,000/yr per software module + ₹60,000/yr for external CA/accountant
     let marketYearly = modules * 15000;
-    if (includeAccounting) {
-      marketYearly += 60000; // Average offline CA monthly billing + tax filing cost
-    }
+    if (includeAccounting) marketYearly += 60000;
 
-    // Siddho CRM Cost: ₹299 Setup + (₹15 * 12) base + (₹799 * 12 if accounting)
     let siddhoYearly = 299 + (15 * 12);
-    if (includeAccounting) {
-      siddhoYearly += (799 * 12);
-    }
+    if (includeAccounting) siddhoYearly += (799 * 12);
 
     const savingsYearly = marketYearly - siddhoYearly;
-
-    // Formatting numbers in Indian currency format
-    const formatINR = (val) => '₹' + val.toLocaleString('en-IN') + ' / yr';
+    const formatINR = (val) => '\u20b9' + val.toLocaleString('en-IN') + ' / yr';
 
     marketCostDisplay.textContent = formatINR(marketYearly);
     siddhoCostDisplay.textContent = formatINR(siddhoYearly);
-    savingsDisplay.textContent = formatINR(savingsYearly);
+    savingsDisplay.textContent    = formatINR(savingsYearly);
   };
 
   if (softwareSlider && accountingToggle) {
     softwareSlider.addEventListener('input', updateCalculator);
     accountingToggle.addEventListener('change', updateCalculator);
-    updateCalculator(); // Initial calculation on load
+    updateCalculator();
   }
 
-  // Lead Form Submission Handler
-  const leadForm = document.getElementById('lead-form');
+
+  // =============================================
+  // Lead Form → WhatsApp Submission
+  // =============================================
+  const leadForm   = document.getElementById('lead-form');
   const formStatus = document.getElementById('form-status');
+
+  // Helper: show styled status message
+  function showStatus(type, html) {
+    if (!formStatus) return;
+    formStatus.innerHTML       = html;
+    formStatus.style.display   = 'block';
+    formStatus.style.color     = type === 'error' ? '#f87171' : '#10b981';
+    formStatus.style.background = type === 'error'
+      ? 'rgba(248,113,113,0.08)'
+      : 'rgba(16,185,129,0.08)';
+    formStatus.style.border    = type === 'error'
+      ? '1px solid rgba(248,113,113,0.3)'
+      : '1px solid rgba(16,185,129,0.3)';
+    formStatus.style.padding      = '12px 16px';
+    formStatus.style.borderRadius = '10px';
+    formStatus.style.marginTop    = '16px';
+    formStatus.style.fontSize     = '0.95rem';
+  }
 
   if (leadForm) {
     leadForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      const name = document.getElementById('name').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const business = document.getElementById('business').value.trim() || 'Not specified';
-      
-      const selectedServices = Array.from(document.querySelectorAll('input[name="service"]:checked'))
-        .map(cb => cb.value)
-        .join(', ');
+      // Collect values
+      const name     = document.getElementById('name').value.trim();
+      const phone    = document.getElementById('phone').value.trim();
+      const business = document.getElementById('business').value.trim();
 
-      formStatus.style.color = '#00f2fe';
-      formStatus.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Processing your request...';
+      const selectedServices = Array.from(
+        document.querySelectorAll('input[name="service"]:checked')
+      ).map(cb => cb.value);
 
+      // ---- Validation ----
+      if (!name) {
+        showStatus('error', '\u26a0\ufe0f Please enter your name before submitting.');
+        document.getElementById('name').focus();
+        return;
+      }
+      const cleanPhone = phone.replace(/\s+/g, '');
+      if (!cleanPhone || !/^\d{10}$/.test(cleanPhone)) {
+        showStatus('error', '\u26a0\ufe0f Please enter a valid 10-digit mobile number.');
+        document.getElementById('phone').focus();
+        return;
+      }
+
+      // ---- Build formatted WhatsApp message ----
+      const now     = new Date();
+      const dateStr = now.toLocaleDateString('en-IN', {
+        day: '2-digit', month: 'short', year: 'numeric'
+      });
+      const timeStr = now.toLocaleTimeString('en-IN', {
+        hour: '2-digit', minute: '2-digit', hour12: true
+      });
+
+      const servicesLine = selectedServices.length > 0
+        ? selectedServices.join(', ')
+        : 'Not specified';
+      const businessLine = business || 'Not specified';
+
+      const lines = [
+        '\uD83D\uDE4F *New Enquiry \u2014 Siddho CRM Website*',
+        '\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501',
+        '\uD83D\uDC64 *Name:* ' + name,
+        '\uD83D\uDCF1 *Phone / WhatsApp:* ' + cleanPhone,
+        '\uD83C\uDFEA *Business:* ' + businessLine,
+        '\uD83D\uDEE0\uFE0F *Services Required:*',
+        '   \u25BA ' + servicesLine,
+        '\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501',
+        '\uD83D\uDD50 *Submitted:* ' + dateStr + ' at ' + timeStr,
+        '',
+        '_Please reply within 30 minutes for best results!_ \uD83D\uDE80'
+      ];
+
+      const message = lines.join('\n');
+      const waUrl   = 'https://wa.me/918900415759?text=' + encodeURIComponent(message);
+
+      // ---- Show success & open WhatsApp immediately ----
+      showStatus('success',
+        '<i class="fa-solid fa-circle-check"></i>&nbsp; Thank you, <strong>' +
+        name + '</strong>! Opening WhatsApp to connect with our team\u2026'
+      );
+
+      // Open WhatsApp in new tab
+      window.open(waUrl, '_blank');
+
+      // Reset form after brief delay, then clear status
       setTimeout(() => {
-        formStatus.style.color = '#10b981';
-        formStatus.innerHTML = `<i class="fa-solid fa-circle-check"></i> Thank you ${name}! Opening WhatsApp to connect with our Hooghly team...`;
-
-        // Create WhatsApp pre-filled message link
-        const waMsg = `Hi Siddho CRM! I submitted a request from your website.%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Business:* ${encodeURIComponent(business)}%0A*Services Interested:* ${encodeURIComponent(selectedServices)}`;
-        const waUrl = `https://wa.me/918900415759?text=${waMsg}`;
-
-        // Redirect to WhatsApp after brief delay
-        setTimeout(() => {
-          window.open(waUrl, '_blank');
-        }, 1500);
-
         leadForm.reset();
-      }, 1000);
+        setTimeout(() => {
+          if (formStatus) {
+            formStatus.innerHTML = '';
+            formStatus.style.display = 'none';
+          }
+        }, 5000);
+      }, 1500);
     });
   }
 
-  // Header background shadow on scroll
+
+  // =============================================
+  // Navbar scroll shadow
+  // =============================================
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
@@ -165,4 +230,5 @@ document.addEventListener('DOMContentLoaded', () => {
       navbar.style.boxShadow = 'none';
     }
   });
+
 });
