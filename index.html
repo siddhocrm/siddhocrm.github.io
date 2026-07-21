@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Siddho CRM - Human + AI Software Suite for MSMEs | ₹299 Onboarding & ₹15/mo</title>
   <meta name="description"
-    content="Siddho CRM provides custom billing, marketing, HR, order taking, e-commerce, web/app development, and accounting & taxation services for local MSMEs in Hooghly. Human+AI power at just ₹299 onboarding and ₹15/month.">
+    content="Siddho CRM provides custom billing, marketing, HR, order taking, e-commerce, web/app development, and accounting & taxation services for Indian MSMEs across West Bengal & rest of India. Human+AI power at just ₹299 onboarding and ₹15/month.">
   <meta name="keywords"
-    content="Siddho CRM, Hooghly software company, MSME software, billing software, HR software, marketing automation, e-commerce app, accounting taxation Hooghly">
+    content="Siddho CRM, Indian MSME software, West Bengal software company, billing software, HR software, marketing automation, e-commerce app, accounting taxation India">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +29,8 @@
   <!-- Top Announcement Bar -->
   <div class="announcement-bar">
     <div class="container announcement-content">
-      <span><i class="fa-solid fa-sparkles"></i> Special Offer for Hooghly & WB Businesses: Complete Software Suite @
+      <span><i class="fa-solid fa-sparkles"></i> Special Offer for West Bengal & All India Businesses: Complete Software
+        Suite @
         <strong>₹299 Onboarding & ₹15/mo</strong>!</span>
       <a href="#contact" class="announcement-link">Get Free Consultancy <i class="fa-solid fa-arrow-right"></i></a>
     </div>
@@ -46,6 +47,7 @@
       <nav class="nav-menu" id="nav-menu">
         <a href="#hero" class="nav-link active">Home</a>
         <a href="#services" class="nav-link">Services</a>
+        <a href="#demos" class="nav-link">Demos</a>
         <a href="#pricing" class="nav-link">Pricing</a>
         <a href="#about" class="nav-link">About</a>
         <a href="#faq" class="nav-link">FAQ</a>
@@ -57,6 +59,14 @@
           <i class="fa-solid fa-phone"></i>
           <span>8900415759</span>
         </a>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark/Light Mode" title="Switch Theme">
+          <span class="theme-toggle-track">
+            <span class="theme-toggle-thumb">
+              <i class="fa-solid fa-moon theme-icon-dark"></i>
+              <i class="fa-solid fa-sun theme-icon-light"></i>
+            </span>
+          </span>
+        </button>
         <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
           <i class="fa-solid fa-bars"></i>
         </button>
@@ -66,11 +76,15 @@
 
   <!-- Hero Section -->
   <section class="hero-section" id="hero">
+    <canvas class="hero-canvas" id="hero-canvas"></canvas>
     <div class="hero-bg-glow"></div>
     <div class="container hero-grid">
       <div class="hero-text-content">
         <div class="hero-badge">
           <i class="fa-solid fa-robot"></i> Human + AI Combination Software
+        </div>
+        <div class="hero-typewriter">
+          Built for <span id="typewriter-text" class="typewriter-word"></span><span class="typewriter-cursor">|</span>
         </div>
         <h1 class="hero-title">
           Scale Your MSME with <span class="gradient-text">Smart Custom Software</span> & 24x7 AI Power.
@@ -136,6 +150,40 @@
     </div>
   </section>
 
+  <!-- Animated Stats Counter Bar -->
+  <section class="stats-counter-section">
+    <div class="container stats-counter-grid">
+      <div class="stat-counter-item" data-target="95" data-suffix="+" data-prefix="">
+        <div class="stat-counter-icon"><i class="fa-solid fa-store"></i></div>
+        <div class="stat-counter-number">
+          <span class="counter-val">0</span><span class="counter-suffix">+</span>
+        </div>
+        <div class="stat-counter-label">Businesses Served</div>
+      </div>
+      <div class="stat-counter-item" data-target="49" data-suffix="K+" data-prefix="₹">
+        <div class="stat-counter-icon"><i class="fa-solid fa-sack-dollar"></i></div>
+        <div class="stat-counter-number">
+          <span class="counter-prefix">₹</span><span class="counter-val">0</span><span class="counter-suffix">K+</span>
+        </div>
+        <div class="stat-counter-label">Annual Savings Delivered</div>
+      </div>
+      <div class="stat-counter-item" data-target="48" data-suffix="" data-prefix="">
+        <div class="stat-counter-icon"><i class="fa-solid fa-star"></i></div>
+        <div class="stat-counter-number">
+          <span class="counter-val">0</span><span class="counter-suffix" data-display=".0 ★"></span>
+        </div>
+        <div class="stat-counter-label">Average Customer Rating</div>
+      </div>
+      <div class="stat-counter-item" data-target="24" data-suffix="x7" data-prefix="">
+        <div class="stat-counter-icon"><i class="fa-solid fa-headset"></i></div>
+        <div class="stat-counter-number">
+          <span class="counter-val">0</span><span class="counter-suffix">x7</span>
+        </div>
+        <div class="stat-counter-label">Live Support Hours</div>
+      </div>
+    </div>
+  </section>
+
   <!-- Value Props Banner -->
   <section class="perks-bar">
     <div class="container perks-grid">
@@ -156,8 +204,9 @@
       </div>
       <div class="perk-card">
         <div class="perk-icon"><i class="fa-solid fa-building-user"></i></div>
-        <h3>Local Hooghly Presence</h3>
-        <p>Direct door-step setup, local consultation, and tailored Bengali & English interface support.</p>
+        <h3>Pan-India Presence</h3>
+        <p>Doorstep setup across West Bengal & remote onboarding for businesses across India, with Bengali & English
+          interface support.</p>
       </div>
     </div>
   </section>
@@ -248,7 +297,108 @@
     </div>
   </section>
 
-  <!-- Accounting & Taxation Spotlight Banner -->
+  <!-- Live Demo Softwares Section -->
+  <section class="demo-section section-padding" id="demos">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-title">See It In Action</span>
+        <h2 class="section-title">Live <span class="gradient-text">Demo Softwares</span></h2>
+        <p class="section-desc">Explore real working demos of software we build for our clients. Your custom version will be tailored to your brand & products.</p>
+      </div>
+
+      <div class="demo-grid">
+
+        <!-- Demo 1: Restaurant -->
+        <div class="demo-card" id="demo-restaurant">
+          <div class="demo-card-top">
+            <div class="demo-icon-wrap demo-color-orange">
+              <i class="fa-solid fa-utensils"></i>
+            </div>
+            <div class="demo-badge">
+              <i class="fa-solid fa-circle demo-live-dot"></i> Live Demo
+            </div>
+          </div>
+          <div class="demo-card-body">
+            <h3>Restaurant Menu &amp; Online Ordering</h3>
+            <p>A fully functional food ordering site with live menu, categories, cart, and WhatsApp order flow — perfect for restaurants, dhabas &amp; sweet shops.</p>
+            <ul class="demo-features">
+              <li><i class="fa-solid fa-check"></i> Digital menu with photos &amp; prices</li>
+              <li><i class="fa-solid fa-check"></i> Add to cart &amp; WhatsApp order</li>
+              <li><i class="fa-solid fa-check"></i> Table &amp; takeaway modes</li>
+            </ul>
+          </div>
+          <div class="demo-card-footer">
+            <a href="#" class="btn btn-demo" id="demo-btn-restaurant" target="_blank" rel="noopener">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> View Live Demo
+            </a>
+            <span class="demo-coming-soon">Link coming soon</span>
+          </div>
+        </div>
+
+        <!-- Demo 2: Attendance App -->
+        <div class="demo-card" id="demo-attendance">
+          <div class="demo-card-top">
+            <div class="demo-icon-wrap demo-color-purple">
+              <i class="fa-solid fa-user-clock"></i>
+            </div>
+            <div class="demo-badge">
+              <i class="fa-solid fa-circle demo-live-dot"></i> Live Demo
+            </div>
+          </div>
+          <div class="demo-card-body">
+            <h3>Staff Attendance &amp; HR App</h3>
+            <p>A mobile-ready attendance tracker with check-in/out, salary calculation, leave management, and real-time staff reports for any business.</p>
+            <ul class="demo-features">
+              <li><i class="fa-solid fa-check"></i> One-tap mobile check-in</li>
+              <li><i class="fa-solid fa-check"></i> Auto salary &amp; overtime calc</li>
+              <li><i class="fa-solid fa-check"></i> Leave &amp; advance tracking</li>
+            </ul>
+          </div>
+          <div class="demo-card-footer">
+            <a href="#" class="btn btn-demo" id="demo-btn-attendance" target="_blank" rel="noopener">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> View Live Demo
+            </a>
+            <span class="demo-coming-soon">Link coming soon</span>
+          </div>
+        </div>
+
+        <!-- Demo 3: Electronics Store -->
+        <div class="demo-card" id="demo-electronics">
+          <div class="demo-card-top">
+            <div class="demo-icon-wrap demo-color-cyan">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <div class="demo-badge">
+              <i class="fa-solid fa-circle demo-live-dot"></i> Live Demo
+            </div>
+          </div>
+          <div class="demo-card-body">
+            <h3>Electronics E-Commerce Store</h3>
+            <p>A complete online electronics shop with product catalog, filtering, cart, GST billing integration, and WhatsApp enquiry — built for retail stores.</p>
+            <ul class="demo-features">
+              <li><i class="fa-solid fa-check"></i> Product catalog with search &amp; filter</li>
+              <li><i class="fa-solid fa-check"></i> Cart &amp; GST invoice generation</li>
+              <li><i class="fa-solid fa-check"></i> WhatsApp enquiry &amp; order alerts</li>
+            </ul>
+          </div>
+          <div class="demo-card-footer">
+            <a href="#" class="btn btn-demo" id="demo-btn-electronics" target="_blank" rel="noopener">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> View Live Demo
+            </a>
+            <span class="demo-coming-soon">Link coming soon</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="demo-cta-note">
+        <i class="fa-solid fa-lightbulb"></i>
+        <span>Want a custom demo for <strong>your</strong> business type? <a href="#contact">Contact us</a> and we'll build one for free during your consultation.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accounting &amp; Taxation Spotlight Banner -->
   <section class="accounting-spotlight section-padding" id="accounting">
     <div class="container">
       <div class="spotlight-card">
@@ -460,10 +610,11 @@
     <div class="container about-grid">
       <div class="about-image-col">
         <div class="about-card-graphic">
-          <div class="graphic-badge"><i class="fa-solid fa-location-dot"></i> Hooghly, West Bengal</div>
-          <h3>Local Presence • Global Standard</h3>
-          <p>Rooted in Hooghly, Siddho CRM was created to eliminate expensive, overly complex software subscriptions for
-            Indian MSMEs.</p>
+          <div class="graphic-badge"><i class="fa-solid fa-location-dot"></i> West Bengal, India</div>
+          <h3>India-Wide Reach • Global Standard</h3>
+          <p>Born in West Bengal, Siddho CRM was created to eliminate expensive, overly complex software subscriptions
+            for
+            Indian MSMEs across the country.</p>
 
           <div class="about-highlights">
             <div class="highlight-box">
@@ -487,8 +638,8 @@
       <div class="about-text-col">
         <span class="sub-title">Why Siddho CRM?</span>
         <h2>Empowering Local MSMEs with <span class="gradient-text">Affordable Technology</span></h2>
-        <p class="lead-p">We believe every business owner in Hooghly, Serampore, Chandannagar, Chinsurah, and across
-          West Bengal deserves enterprise-level tools without paying tens of thousands per year.</p>
+        <p class="lead-p">We believe every business owner across West Bengal, and all across India deserves
+          enterprise-level tools without paying tens of thousands per year.</p>
         <p>Whether you need a simple fast billing counter, WhatsApp customer broadcasts, staff attendance, or complete
           GST accounting, Siddho CRM brings all tools under one roof at an unheard-of price of <strong>₹299 setup & ₹15
             monthly</strong>.</p>
@@ -541,7 +692,7 @@
           <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
               class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
           <p class="quote">"The Human + AI combination is incredible. Whenever I have a custom request for my sweet shop
-            order counter, the team in Hooghly updates my software immediately."</p>
+            order counter, the Siddho team updates my software immediately."</p>
           <div class="author-info">
             <div class="author-avatar">SD</div>
             <div>
@@ -611,8 +762,8 @@
           </button>
           <div class="faq-answer">
             <p>Our AI engines operate 24/7 inside the CRM to speed up invoice generation, customer messaging, and
-              automated reports. Meanwhile, our dedicated human engineering and accounting team in Hooghly handles
-              complex custom setup, phone support, and tax filings.</p>
+              automated reports. Meanwhile, our dedicated human engineering and accounting team handles
+              complex custom setup, phone support, and tax filings across India.</p>
           </div>
         </div>
 
@@ -644,12 +795,13 @@
         <!-- FAQ 6 -->
         <div class="faq-item">
           <button class="faq-question">
-            <span>How do I get started or request doorstep installation in Hooghly?</span>
+            <span>How do I get started or request doorstep / remote installation?</span>
             <i class="fa-solid fa-chevron-down icon-toggle"></i>
           </button>
           <div class="faq-answer">
             <p>Fill out the contact form below or directly call/WhatsApp us at <strong>8900415759</strong>. Our team
-              will contact you within 30 minutes for a free demo and consultation!</p>
+              will contact you within 30 minutes for a free demo and consultation — we support doorstep setup across
+              West Bengal and remote onboarding anywhere in India!</p>
           </div>
         </div>
       </div>
@@ -740,7 +892,8 @@
         <a href="#" class="brand-logo">
           <img src="logo.jpg" alt="Siddho CRM Logo" class="footer-logo-img">
         </a>
-        <p>Human + AI powered enterprise business software built specifically for local MSMEs in Hooghly & West Bengal.
+        <p>Human + AI powered enterprise business software built for Indian MSMEs across West Bengal & the rest of
+          India.
         </p>
         <p class="address-text"><i class="fa-solid fa-location-dot"></i> Hooghly, West Bengal, India | 📞 8900415759</p>
       </div>
@@ -770,16 +923,22 @@
 
       <div class="footer-col">
         <h4>Quick Action</h4>
-        <p>Have questions? Chat directly on WhatsApp or call our Hooghly desk.</p>
+        <p>Have questions? Chat directly on WhatsApp or call our support team.</p>
         <a href="https://wa.me/918900415759" target="_blank" class="btn btn-sm btn-green"><i
             class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
       </div>
     </div>
 
     <div class="container footer-bottom">
-      <p>&copy; 2026 Siddho CRM. All Rights Reserved. Empowering Hooghly MSMEs.</p>
+      <p>&copy; 2026 Siddho CRM. All Rights Reserved. Empowering Indian MSMEs.</p>
     </div>
   </footer>
+
+  <!-- Scroll To Top Button -->
+  <button class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+    <span class="stt-ripple"></span>
+  </button>
 
   <!-- Floating WhatsApp Action Button -->
   <a href="https://wa.me/918900415759?text=Hi%20Siddho%20CRM!%20I%20am%20interested%20in%20the%20299%20onboarding%20and%2015rs%20monthly%20plan."
