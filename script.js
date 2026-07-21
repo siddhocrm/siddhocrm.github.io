@@ -36,8 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close on outside click / tap
     document.addEventListener('click', (e) => {
       if (navMenu.classList.contains('active') &&
-          !navMenu.contains(e.target) &&
-          !mobileToggle.contains(e.target)) {
+        !navMenu.contains(e.target) &&
+        !mobileToggle.contains(e.target)) {
         closeMenu();
       }
     });
@@ -66,14 +66,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // =============================================
   // ROI Calculator
   // =============================================
-  const softwareSlider    = document.getElementById('software-count');
-  const moduleDisplay     = document.getElementById('module-display');
-  const accountingToggle  = document.getElementById('accounting-toggle');
-  const toggleStatus      = document.getElementById('toggle-status');
-  const accFeeLine        = document.getElementById('acc-fee-line');
+  const softwareSlider = document.getElementById('software-count');
+  const moduleDisplay = document.getElementById('module-display');
+  const accountingToggle = document.getElementById('accounting-toggle');
+  const toggleStatus = document.getElementById('toggle-status');
+  const accFeeLine = document.getElementById('acc-fee-line');
   const marketCostDisplay = document.getElementById('market-cost-display');
   const siddhoCostDisplay = document.getElementById('siddho-cost-display');
-  const savingsDisplay    = document.getElementById('savings-display');
+  const savingsDisplay = document.getElementById('savings-display');
 
   const updateCalculator = () => {
     if (!softwareSlider || !accountingToggle) return;
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     marketCostDisplay.textContent = formatINR(marketYearly);
     siddhoCostDisplay.textContent = formatINR(siddhoYearly);
-    savingsDisplay.textContent    = formatINR(savingsYearly);
+    savingsDisplay.textContent = formatINR(savingsYearly);
   };
 
   if (softwareSlider && accountingToggle) {
@@ -116,27 +116,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // =============================================
-  // Lead Form → WhatsApp Submission
+  // Lead Form → WhatsApp + Google Sheets
   // =============================================
-  const leadForm   = document.getElementById('lead-form');
+
+  // ── STEP: Paste your deployed Apps Script Web App URL below ──────────────
+  const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxjwkv1lLvciW5j1KIMQwSRgSmuPInPBZUPtO-eJtyymBVRLFGJ3qTyL-vTQfCEJJk/exec'; // <-- Replace with your URL
+  // ─────────────────────────────────────────────────────────────────────────
+
+  const leadForm = document.getElementById('lead-form');
   const formStatus = document.getElementById('form-status');
 
   // Helper: show styled status message
   function showStatus(type, html) {
     if (!formStatus) return;
-    formStatus.innerHTML       = html;
-    formStatus.style.display   = 'block';
-    formStatus.style.color     = type === 'error' ? '#f87171' : '#10b981';
+    formStatus.innerHTML = html;
+    formStatus.style.display = 'block';
+    formStatus.style.color = type === 'error' ? '#f87171' : '#10b981';
     formStatus.style.background = type === 'error'
       ? 'rgba(248,113,113,0.08)'
       : 'rgba(16,185,129,0.08)';
-    formStatus.style.border    = type === 'error'
+    formStatus.style.border = type === 'error'
       ? '1px solid rgba(248,113,113,0.3)'
       : '1px solid rgba(16,185,129,0.3)';
-    formStatus.style.padding      = '12px 16px';
+    formStatus.style.padding = '12px 16px';
     formStatus.style.borderRadius = '10px';
-    formStatus.style.marginTop    = '16px';
-    formStatus.style.fontSize     = '0.95rem';
+    formStatus.style.marginTop = '16px';
+    formStatus.style.fontSize = '0.95rem';
+  }
+
+  /**
+   * Silently sends form data to Google Sheets via Apps Script.
+   * Runs in the background — never blocks or delays the user.
+   */
+  function sendToGoogleSheets(payload) {
+    if (!SHEETS_URL || SHEETS_URL === 'YOUR_APPS_SCRIPT_URL') return; // Skip if not configured
+    fetch(SHEETS_URL, {
+      method: 'POST',
+      mode: 'no-cors', // Apps Script doesn't return CORS headers; response is opaque but data IS saved
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).catch(() => { }); // Silently ignore network errors — WhatsApp flow is unaffected
   }
 
   if (leadForm) {
@@ -144,8 +163,8 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
 
       // Collect values
-      const name     = document.getElementById('name').value.trim();
-      const phone    = document.getElementById('phone').value.trim();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
       const business = document.getElementById('business').value.trim();
 
       const selectedServices = Array.from(
@@ -165,47 +184,36 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // ---- Build formatted WhatsApp message ----
-      const now     = new Date();
+      // ---- Build timestamp ----
+      const now = new Date();
       const dateStr = now.toLocaleDateString('en-IN', {
         day: '2-digit', month: 'short', year: 'numeric'
       });
       const timeStr = now.toLocaleTimeString('en-IN', {
         hour: '2-digit', minute: '2-digit', hour12: true
       });
-
+      const timestamp = dateStr + ' ' + timeStr;
       const servicesLine = selectedServices.length > 0
         ? selectedServices.join(', ')
         : 'Not specified';
       const businessLine = business || 'Not specified';
 
-      const lines = [
-        '\uD83D\uDE4F *New Enquiry \u2014 Siddho CRM Website*',
-        '\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501',
-        '\uD83D\uDC64 *Name:* ' + name,
-        '\uD83D\uDCF1 *Phone / WhatsApp:* ' + cleanPhone,
-        '\uD83C\uDFEA *Business:* ' + businessLine,
-        '\uD83D\uDEE0\uFE0F *Services Required:*',
-        '   \u25BA ' + servicesLine,
-        '\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501',
-        '\uD83D\uDD50 *Submitted:* ' + dateStr + ' at ' + timeStr,
-        '',
-        '_Please reply within 30 minutes for best results!_ \uD83D\uDE80'
-      ];
+      // ---- 1. Send to Google Sheets (silent background, no await) ----
+      sendToGoogleSheets({
+        timestamp: timestamp,
+        name: name,
+        phone: cleanPhone,
+        business: businessLine,
+        services: servicesLine
+      });
 
-      const message = lines.join('\n');
-      const waUrl   = 'https://wa.me/918900415759?text=' + encodeURIComponent(message);
-
-      // ---- Show success & open WhatsApp immediately ----
+      // ---- Show success confirmation ----
       showStatus('success',
         '<i class="fa-solid fa-circle-check"></i>&nbsp; Thank you, <strong>' +
-        name + '</strong>! Opening WhatsApp to connect with our team\u2026'
+        name + '</strong>! Your request has been received. Our team will call you back shortly. \uD83D\uDCCA'
       );
 
-      // Open WhatsApp in new tab
-      window.open(waUrl, '_blank');
-
-      // Reset form after brief delay, then clear status
+      // Reset form after brief delay
       setTimeout(() => {
         leadForm.reset();
         setTimeout(() => {
