@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // =============================================
 
   // ── STEP: Paste your deployed Apps Script Web App URL below ──────────────
-  const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxjwkv1lLvciW5j1KIMQwSRgSmuPInPBZUPtO-eJtyymBVRLFGJ3qTyL-vTQfCEJJk/exec'; // <-- Replace with your URL
+  const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbyaA9xRG2lSfA8CbDxc7BMN8WJbbvYrujIJJfUazpTTuXZSZ3oa8c1mMjk4J7KB6XKaOQ/exec'; // <-- Replace with your URL
   // ─────────────────────────────────────────────────────────────────────────
 
   const leadForm = document.getElementById('lead-form');
@@ -293,7 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const resizeCanvas = () => {
       const section = heroCanvas.parentElement;
-      heroCanvas.width  = section.offsetWidth;
+      heroCanvas.width = section.offsetWidth;
       heroCanvas.height = section.offsetHeight;
     };
 
@@ -302,23 +302,23 @@ document.addEventListener('DOMContentLoaded', () => {
         this.reset(initial);
       }
       reset(initial = false) {
-        this.x         = Math.random() * heroCanvas.width;
-        this.y         = initial ? Math.random() * heroCanvas.height : (Math.random() > 0.5 ? 0 : heroCanvas.height);
-        this.r         = Math.random() * 1.4 + 0.2;
-        this.vx        = (Math.random() - 0.5) * 0.25;
-        this.vy        = (Math.random() - 0.5) * 0.25;
+        this.x = Math.random() * heroCanvas.width;
+        this.y = initial ? Math.random() * heroCanvas.height : (Math.random() > 0.5 ? 0 : heroCanvas.height);
+        this.r = Math.random() * 1.4 + 0.2;
+        this.vx = (Math.random() - 0.5) * 0.25;
+        this.vy = (Math.random() - 0.5) * 0.25;
         this.baseAlpha = Math.random() * 0.5 + 0.1;
-        this.alpha     = this.baseAlpha;
-        this.twinkle   = (Math.random() * 0.006 + 0.002) * (Math.random() > 0.5 ? 1 : -1);
+        this.alpha = this.baseAlpha;
+        this.twinkle = (Math.random() * 0.006 + 0.002) * (Math.random() > 0.5 ? 1 : -1);
       }
       update() {
-        this.x     += this.vx;
-        this.y     += this.vy;
+        this.x += this.vx;
+        this.y += this.vy;
         this.alpha += this.twinkle;
         if (this.alpha > this.baseAlpha + 0.3 || this.alpha < 0.04) this.twinkle *= -1;
         const pad = 5;
         if (this.x < -pad || this.x > heroCanvas.width + pad ||
-            this.y < -pad || this.y > heroCanvas.height + pad) {
+          this.y < -pad || this.y > heroCanvas.height + pad) {
           this.reset(false);
         }
       }
@@ -366,11 +366,11 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   if (typewriterEl) {
-    let twIdx     = 0;
-    let twChar    = 0;
-    let twDelete  = false;
-    let twPaused  = false;
-    let twTimer   = null;
+    let twIdx = 0;
+    let twChar = 0;
+    let twDelete = false;
+    let twPaused = false;
+    let twTimer = null;
 
     const tick = () => {
       if (twPaused) return;
@@ -389,7 +389,7 @@ document.addEventListener('DOMContentLoaded', () => {
         typewriterEl.textContent = word.slice(0, twChar);
         if (twChar === 0) {
           twDelete = false;
-          twIdx    = (twIdx + 1) % businessTypes.length;
+          twIdx = (twIdx + 1) % businessTypes.length;
         }
         twTimer = setTimeout(tick, 38);
       }
@@ -405,19 +405,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const counterItems = document.querySelectorAll('.stat-counter-item');
 
   const runCounter = (item) => {
-    const valEl     = item.querySelector('.counter-val');
-    const suffixEl  = item.querySelector('.counter-suffix');
-    const target    = parseInt(item.dataset.target, 10);
-    const isRating  = target === 48; // special case: show 4.8★
-    const duration  = 1800;
+    const valEl = item.querySelector('.counter-val');
+    const suffixEl = item.querySelector('.counter-suffix');
+    const target = parseInt(item.dataset.target, 10);
+    const isRating = target === 48; // special case: show 4.8★
+    const duration = 1800;
     const startTime = performance.now();
 
     const step = (now) => {
-      const elapsed  = Math.min(now - startTime, duration);
+      const elapsed = Math.min(now - startTime, duration);
       const progress = elapsed / duration;
       // ease-out cubic
-      const eased    = 1 - Math.pow(1 - progress, 3);
-      const current  = Math.floor(eased * target);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.floor(eased * target);
 
       if (isRating) {
         // Display as  4.9 ★  (target 49 → 4.9)
