@@ -116,12 +116,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // =============================================
-  // Lead Form → WhatsApp + Google Sheets
+  // Lead Form → Google Sheets
   // =============================================
 
-  // ── STEP: Paste your deployed Apps Script Web App URL below ──────────────
-  const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbyaA9xRG2lSfA8CbDxc7BMN8WJbbvYrujIJJfUazpTTuXZSZ3oa8c1mMjk4J7KB6XKaOQ/exec'; // <-- Replace with your URL
-  // ─────────────────────────────────────────────────────────────────────────
+  const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbznVdLH0a06BGHe31J_1efdOD1bYshMEHhhnW3sebdbIqlAQEZOvFK6LfrK7LHjrhEhlg/exec';
 
   const leadForm = document.getElementById('lead-form');
   const formStatus = document.getElementById('form-status');
@@ -144,18 +142,19 @@ document.addEventListener('DOMContentLoaded', () => {
     formStatus.style.fontSize = '0.95rem';
   }
 
-  /**
-   * Silently sends form data to Google Sheets via Apps Script.
-   * Runs in the background — never blocks or delays the user.
-   */
   function sendToGoogleSheets(payload) {
-    if (!SHEETS_URL || SHEETS_URL === 'YOUR_APPS_SCRIPT_URL') return; // Skip if not configured
+    if (!SHEETS_URL) return;
+    
+    const urlParams = new URLSearchParams(payload);
+
     fetch(SHEETS_URL, {
       method: 'POST',
-      mode: 'no-cors', // Apps Script doesn't return CORS headers; response is opaque but data IS saved
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    }).catch(() => { }); // Silently ignore network errors — WhatsApp flow is unaffected
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: urlParams.toString()
+    }).catch(error => console.error('Error sending to Sheets:', error));
   }
 
   if (leadForm) {
@@ -184,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // ---- Build timestamp ----
+      // ---- Build payload and send ----
       const now = new Date();
       const dateStr = now.toLocaleDateString('en-IN', {
         day: '2-digit', month: 'short', year: 'numeric'
@@ -192,20 +191,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const timeStr = now.toLocaleTimeString('en-IN', {
         hour: '2-digit', minute: '2-digit', hour12: true
       });
-      const timestamp = dateStr + ' ' + timeStr;
-      const servicesLine = selectedServices.length > 0
-        ? selectedServices.join(', ')
-        : 'Not specified';
-      const businessLine = business || 'Not specified';
-
-      // ---- 1. Send to Google Sheets (silent background, no await) ----
-      sendToGoogleSheets({
-        timestamp: timestamp,
+      
+      const payload = {
+        timestamp: dateStr + ' ' + timeStr,
         name: name,
         phone: cleanPhone,
-        business: businessLine,
-        services: servicesLine
-      });
+        business: business || 'Not specified',
+        services: selectedServices.length > 0 ? selectedServices.join(', ') : 'Not specified'
+      };
+
+      sendToGoogleSheets(payload);
 
       // ---- Show success confirmation ----
       showStatus('success',
